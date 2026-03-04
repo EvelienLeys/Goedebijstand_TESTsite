@@ -19,72 +19,50 @@
     --border:    #a8c6e0;
     --white:     #ffffff;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'EB Garamond', Georgia, serif; background: var(--sky); color: var(--text); font-size: 18px; line-height: 1.75; }
-
-  /* ─── HEADER ─── */
   header { background: linear-gradient(160deg, var(--blue-navy) 0%, var(--blue-deep) 60%, var(--blue-mid) 100%); color: #fff; text-align: center; padding: 0; border-bottom: 4px solid var(--gold); cursor: pointer; position: relative; overflow: hidden; }
   .hero-photo { width: 100%; height: 320px; object-fit: cover; object-position: center 40%; display: block; opacity: 0.45; }
   .hero-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; }
   .hero-cross { font-size: 1.6rem; color: var(--gold-lt); letter-spacing: 10px; margin-bottom: 0.5rem; }
   header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.6); letter-spacing: 0.04em; }
   header p.subtitle { font-style: italic; color: var(--gold-lt); font-size: 1.1rem; margin-top: 0.4rem; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
-
-  /* ─── NAV ─── */
   nav { background: var(--blue-deep); display: flex; flex-wrap: wrap; justify-content: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(10,30,60,0.3); }
   nav a { color: #cfe2f5; text-decoration: none; padding: 0.7rem 1.2rem; font-family: 'EB Garamond', serif; font-size: 0.92rem; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s, color 0.2s; border-right: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
   nav a:last-child { border-right: none; }
   nav a:hover, nav a.active { background: var(--gold); color: var(--blue-navy); font-weight: 600; }
-
-  /* ─── LAYOUT ─── */
   .container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 310px; gap: 2.5rem; }
   @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
-
-  /* ─── MAIN ─── */
   main > section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); animation: fadeIn 0.35s ease; }
   main > section:last-child { border-bottom: none; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
   h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--blue-deep); font-weight: 600; margin-bottom: 0.9rem; padding-bottom: 0.45rem; border-bottom: 2px solid var(--gold); display: inline-block; }
   h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--blue-mid); font-style: italic; margin: 1.1rem 0 0.35rem; }
   p { margin-bottom: 0.75rem; }
   a { color: var(--blue-mid); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; transition: color 0.2s; cursor: pointer; }
   a:hover { color: var(--gold); }
   .ornament { text-align: center; color: var(--gold); font-size: 1.2rem; letter-spacing: 6px; margin: 1.5rem 0; }
-
-  /* ─── PHOTOS ─── */
   .church-photo { width: 100%; border-radius: 4px; border: 3px solid var(--pale-blue); box-shadow: 0 4px 18px rgba(15,40,80,0.18); margin: 1.2rem 0; display: block; object-fit: cover; }
   .photo-caption { font-size: 0.82rem; color: var(--muted); font-style: italic; text-align: center; margin-top: -0.6rem; margin-bottom: 1rem; }
   .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
   .photo-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; border: 3px solid var(--pale-blue); box-shadow: 0 3px 12px rgba(15,40,80,0.15); }
   @media(max-width:600px){ .photo-grid { grid-template-columns: 1fr; } }
-
-  /* ─── BREADCRUMB ─── */
   .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.4rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
   .breadcrumb span { color: var(--gold); margin: 0 0.4rem; }
-
-  /* ─── SUBNAV ─── */
   .subnav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.8rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--pale-blue); }
   .subnav a { display: inline-block; padding: 0.35rem 0.9rem; background: var(--pale-blue); color: var(--blue-deep); text-decoration: none; border-radius: 3px; font-size: 0.9rem; font-family: 'EB Garamond', serif; letter-spacing: 0.04em; border: 1px solid var(--border); transition: background 0.2s, color 0.2s; cursor: pointer; }
   .subnav a:hover { background: var(--blue-mid); color: #fff; border-color: var(--blue-mid); }
   .subnav a.subnav-active { background: var(--blue-deep); color: #fff; border-color: var(--blue-deep); font-weight: 600; }
-
-  /* ─── NEWS ITEMS ─── */
   .news-item { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue-mid); padding: 0.9rem 1.2rem; margin-bottom: 0.9rem; border-radius: 3px; transition: box-shadow 0.2s, border-left-color 0.2s; cursor: pointer; }
   .news-item:hover { box-shadow: 0 3px 14px rgba(30,80,140,0.14); border-left-color: var(--gold); }
   .news-item .tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--blue-mid); font-weight: 500; margin-bottom: 0.2rem; }
   .news-item .ni-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--blue-navy); }
   .news-item:hover .ni-title { color: var(--blue-mid); }
-
-  /* ─── TABLE ─── */
   .viering-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
   .viering-table th { background: var(--blue-deep); color: #fff; padding: 0.5rem 0.8rem; text-align: left; font-family: 'Playfair Display', serif; font-weight: 400; }
   .viering-table td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
   .viering-table tr:nth-child(even) td { background: var(--pale-blue); }
-
-  /* ─── SIDEBAR ─── */
   aside { font-size: 0.95rem; }
   .sidebar-box { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--blue-mid); padding: 1.2rem 1.2rem 1rem; margin-bottom: 1.6rem; border-radius: 3px; box-shadow: 0 2px 8px rgba(30,80,140,0.07); }
   .sidebar-box h3 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-style: normal; font-weight: 600; color: var(--blue-deep); text-transform: uppercase; letter-spacing: 0.07em; margin: 0 0 0.65rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--pale-blue); }
@@ -92,8 +70,6 @@
   .sidebar-box .time { font-weight: 600; color: var(--blue-navy); }
   .sidebar-box .address { line-height: 1.5; color: var(--muted); font-style: italic; font-size: 0.88rem; }
   .sidebar-photo { width: 100%; border-radius: 3px; margin-bottom: 1rem; border: 2px solid var(--pale-blue); display: block; object-fit: cover; height: 160px; }
-
-  /* ─── CONTACT FORM ─── */
   .contact-form { display: grid; gap: 1rem; margin-top: 1rem; }
   .contact-form label { font-size: 0.88rem; color: var(--muted); display: block; margin-bottom: 0.2rem; }
   .contact-form input, .contact-form textarea { width: 100%; padding: 0.55rem 0.8rem; border: 1px solid var(--border); background: #fff; font-family: 'EB Garamond', serif; font-size: 1rem; color: var(--text); border-radius: 3px; outline: none; transition: border-color 0.2s; }
@@ -101,34 +77,92 @@
   .contact-form textarea { min-height: 120px; resize: vertical; }
   .btn { display: inline-block; padding: 0.6rem 1.6rem; background: var(--blue-deep); color: #fff; border: none; font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s; border-radius: 3px; }
   .btn:hover { background: var(--blue-navy); }
-
-  /* ─── HOMILIE / BEZINNING ─── */
   .homilie { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue-mid); padding: 1.5rem 1.8rem; margin-top: 1rem; border-radius: 3px; line-height: 1.9; }
-
-  /* ─── DATE LIST ─── */
   .date-list { list-style: none; columns: 2; column-gap: 1rem; font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem; }
   .date-list li { padding: 0.15rem 0; }
-
-  /* ─── KIDS ─── */
   .kids-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
   @media(max-width:600px){ .kids-grid { grid-template-columns: 1fr; } }
   .kids-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; text-align: center; cursor: pointer; transition: box-shadow 0.2s, transform 0.2s; }
   .kids-card:hover { box-shadow: 0 4px 16px rgba(30,80,140,0.15); transform: translateY(-2px); }
   .kids-card .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
   .kids-card h3 { font-style: normal; color: var(--blue-deep); margin: 0 0 0.5rem; }
-
-  /* ─── PARTNERS ─── */
   .partners { display: grid; gap: 1rem; margin-top: 1rem; }
   .partner-item { background: var(--white); border: 1px solid var(--border); padding: 1rem 1.3rem; border-radius: 3px; border-left: 4px solid var(--blue-mid); }
   .partner-item strong { color: var(--blue-deep); }
-
-  /* ─── MAP ─── */
   .map-box { background: var(--pale-blue); border: 1px solid var(--border); padding: 1.5rem; text-align: center; color: var(--muted); font-style: italic; border-radius: 4px; margin-top: 1rem; }
 
-  /* ─── FOOTER ─── */
+  /* ── AGENDA ── */
+  .agenda-wrapper { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-top: 0.8rem; box-shadow: 0 2px 8px rgba(15,40,80,0.08); }
+  .agenda-maand-header { background: var(--blue-navy); color: var(--gold-lt); font-family: 'Playfair Display', serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.28rem 0.8rem; }
+  .agenda-dag { display: grid; grid-template-columns: 72px 1fr; border-bottom: 1px solid var(--border); }
+  .agenda-dag:last-child { border-bottom: none; }
+  .agenda-dag.weekend .datum-cel { background: #e4edf7; }
+  .agenda-dag.vandaag .datum-cel { background: rgba(196,147,58,0.18); }
+  .datum-cel { background: var(--pale-blue); padding: 0.35rem 0.6rem; font-family: 'Playfair Display', serif; border-right: 2px solid var(--border); display: flex; flex-direction: column; justify-content: center; }
+  .datum-cel .dag-naam { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-mid); font-family: 'EB Garamond', serif; }
+  .datum-cel .dag-nr { font-size: 1.1rem; line-height: 1.1; color: var(--blue-navy); }
+  .datum-cel .maand-kort { font-size: 0.6rem; color: var(--muted); font-family: 'EB Garamond', serif; }
+  .agenda-dag.vandaag .datum-cel .dag-naam,
+  .agenda-dag.vandaag .datum-cel .dag-nr { color: var(--gold); }
+  .ev-cel { padding: 0.3rem 0.8rem; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
+  .evenement { display: flex; align-items: baseline; gap: 0.45rem; padding: 0.08rem 0; font-size: 0.85rem; line-height: 1.35; }
+  .ev-tijd { font-family: 'Playfair Display', serif; font-size: 0.7rem; color: var(--gold); min-width: 38px; flex-shrink: 0; }
+  .ev-icoon { flex-shrink: 0; font-size: 0.7rem; }
+  .agenda-legenda { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.55rem; font-size: 0.78rem; color: var(--muted); font-style: italic; }
+
+  /* ── ARCHIEF LIJST ── */
+  .archief-lijst { list-style: none; margin: 0; padding: 0; }
+  .archief-lijst li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.32rem 0; border-bottom: 1px solid var(--pale-blue); font-size: 0.93rem; }
+  .archief-lijst li:last-child { border-bottom: none; }
+  .archief-lijst a { text-decoration: none; color: var(--blue-mid); transition: color 0.2s; flex: 1; }
+  .archief-lijst a:hover { color: var(--gold); }
+  .al-datum { font-size: 0.78rem; color: var(--muted); white-space: nowrap; font-style: italic; flex-shrink: 0; }
+  .viering-list { margin-top: 0.5rem; }
+  .vl-item { display: flex; flex-direction: column; padding: 0.55rem 0.9rem; border-left: 3px solid var(--blue-mid); background: var(--white); border-bottom: 1px solid var(--border); margin-bottom: 0.4rem; border-radius: 0 3px 3px 0; }
+  .vl-datum { font-family: 'Playfair Display', serif; font-size: 0.82rem; color: var(--gold); margin-bottom: 0.15rem; }
+  .vl-tekst { font-size: 0.95rem; color: var(--text); }
+
+  /* ── PAULUS BOX ── */
+  .paulus-box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 1.3rem 1.7rem; border-radius: 3px; margin-top: 0.9rem; box-shadow: 0 2px 8px rgba(15,40,80,0.07); }
+  .paulus-box h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--blue-deep); font-style: normal; margin: 0 0 0.6rem; }
+  .paulus-box ul { padding-left: 1.3rem; margin: 0.4rem 0 0.75rem; font-size: 0.94rem; color: var(--muted); }
+  .paulus-box ul li { margin-bottom: 0.2rem; }
+  .paulus-knop { display: inline-block; margin-top: 0.7rem; padding: 0.5rem 1.3rem; background: var(--blue-deep); color: #fff; font-family: 'EB Garamond', serif; font-size: 0.94rem; letter-spacing: 0.04em; text-decoration: none; border-radius: 3px; transition: background 0.2s; }
+  .paulus-knop:hover { background: var(--gold); color: var(--blue-navy); text-decoration: none; }
+
+  /* ── FOTO GALERIJ ── */
+  .act-subnav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.6rem; padding-bottom: 1rem; border-bottom: 2px solid var(--pale-blue); }
+  .act-subnav a { display: inline-block; padding: 0.35rem 0.9rem; background: var(--pale-blue); color: var(--blue-deep); text-decoration: none; border-radius: 3px; font-size: 0.88rem; font-family: 'EB Garamond', serif; border: 1px solid var(--border); transition: background 0.2s, color 0.2s; cursor: pointer; }
+  .act-subnav a:hover { background: var(--blue-mid); color: #fff; border-color: var(--blue-mid); }
+  .act-subnav a.act-actief { background: var(--blue-deep); color: #fff; border-color: var(--blue-deep); font-weight: 600; }
+  .foto-categorie { margin-bottom: 2.2rem; }
+  .foto-cat-titel { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--blue-mid); font-style: normal; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; margin-bottom: 0.8rem; }
+  .foto-omschr { font-style: italic; color: var(--muted); font-size: 0.9rem; margin-bottom: 0.8rem; }
+  .foto-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.8rem; }
+  .foto-item { position: relative; overflow: hidden; border-radius: 3px; border: 2px solid var(--pale-blue); background: var(--pale-blue); aspect-ratio: 4/3; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .foto-item:hover { transform: scale(1.03); box-shadow: 0 5px 16px rgba(15,40,80,0.2); border-color: var(--gold); }
+  .foto-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .foto-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,39,68,0.8); color: var(--gold-lt); font-size: 0.74rem; font-family: 'Playfair Display', serif; padding: 0.28rem 0.55rem; }
+  .foto-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #7a9ec0; font-size: 0.74rem; font-family: 'EB Garamond', serif; gap: 0.35rem; text-align: center; padding: 0.4rem; }
+  .foto-ph .fi { font-size: 1.7rem; opacity: 0.45; }
+  .foto-hint { font-size: 0.78rem; color: var(--muted); font-style: italic; background: var(--pale-blue); border: 1px dashed var(--border); padding: 0.4rem 0.75rem; border-radius: 3px; margin-top: 0.5rem; }
+
+  /* ── LIGHTBOX ── */
+  #lightbox { display: none; position: fixed; inset: 0; background: rgba(8,18,36,0.95); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 88vw; max-height: 82vh; object-fit: contain; border: 2px solid var(--gold); border-radius: 3px; }
+  #lb-sluit { position: absolute; top: 1rem; right: 1.5rem; color: var(--gold-lt); font-size: 2rem; cursor: pointer; line-height: 1; }
+  #lb-cap { margin-top: 0.8rem; color: var(--gold-lt); font-size: 0.86rem; font-style: italic; }
+
   footer { background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-deep) 100%); color: #cfe2f5; text-align: center; padding: 2rem 1rem; font-size: 0.88rem; border-top: 4px solid var(--gold); margin-top: 1rem; }
   footer a { color: var(--gold-lt); }
   footer .footer-cross { font-size: 2rem; color: var(--gold); display: block; margin-bottom: 0.6rem; }
+
+  @media(max-width:600px) {
+    .agenda-dag { grid-template-columns: 78px 1fr; }
+    .datum-cel .dag-nr { font-size: 1.1rem; }
+    .foto-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -136,7 +170,7 @@
 <header onclick="navigate('home')">
   <img class="hero-photo" src="https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Exterieur_Knop%204%201%20Icoon%20Kerkgebouw%20Goede%20Bijstand.jpg" alt="Onze-Lieve-Vrouw van Goede Bijstand Brussel">
   <div class="hero-overlay">
-    <div class="hero-cross">&#x2748; &#x2748; &#x2748; </div>
+    <div class="hero-cross">&#x2748; &#x2748; &#x2748;</div>
     <h1>Onze-Lieve-Vrouw van Goede Bijstand</h1>
     <p class="subtitle">Parochie &#8212; Brussel Centrum</p>
   </div>
@@ -158,6 +192,12 @@
   <aside id="sidebar"></aside>
 </div>
 
+<div id="lightbox">
+  <span id="lb-sluit" onclick="sluitLb()">&#x2715;</span>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-cap"></div>
+</div>
+
 <footer>
   <span class="footer-cross">&#x271D;</span>
   <p>Parochie Goede Bijstand &#8212; Kolenmarkt 91, 1000 Brussel</p>
@@ -169,13 +209,79 @@
 </footer>
 
 <script>
-const EXT  = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Exterieur_Knop%204%201%20Icoon%20Kerkgebouw%20Goede%20Bijstand.jpg';
-const INT  = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Interieur_Onze-Lieve-Vrouw%20van%20Goede%20Bijstandkerk_JPR4243_%C2%A9%20visit.brussels%20-%20Jean-Paul%20Remy.jpg';
-const ALT  = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Extra%20%28kunstwerk%20detail%29_Altaar%20Goede%20Bijstandskerk_0.jpg';
+const EXT = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Exterieur_Knop%204%201%20Icoon%20Kerkgebouw%20Goede%20Bijstand.jpg';
+const INT = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Interieur_Onze-Lieve-Vrouw%20van%20Goede%20Bijstandkerk_JPR4243_%C2%A9%20visit.brussels%20-%20Jean-Paul%20Remy.jpg';
+const ALT = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Extra%20%28kunstwerk%20detail%29_Altaar%20Goede%20Bijstandskerk_0.jpg';
 
-// ═══════════════════════════════════════════════════════════════
-// SIDEBAR (gedeeld over alle pagina's)
-// ═══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════
+// AGENDA — EXTRA EVENEMENTEN
+// Zondag 11u (Goede Bijstand) en zaterdag 16u30 (Finis Terrae)
+// worden automatisch ingevuld. Voeg hier éénmalige extra
+// evenementen toe per datum: "JJJJ-MM-DD": [{tijd,type,tekst}]
+// type: "viering" | "activiteit" | "muziek"
+// ══════════════════════════════════════════════════════════
+const agendaExtra = {
+  // "2026-03-22": [{ tijd: "14:00", type: "muziek",     tekst: "Orgelconcert \u2014 vrije toegang" }],
+  // "2026-03-25": [{ tijd: "15:00", type: "activiteit", tekst: "Lezing: geloofsgesprek" }]
+};
+
+const DNKORT  = ["Zo","Ma","Di","Wo","Do","Vr","Za"];
+const MNKORT  = ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
+const MNLANG  = ["Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"];
+const EVICON  = { viering:"\u271D", activiteit:"\u25C6", muziek:"\uD83C\uDFB5" };
+
+function agendaHTML() {
+  const nu = new Date(); nu.setHours(0,0,0,0);
+  let h = '<div class="agenda-wrapper">', hm = -1, rijen = 0;
+  for (let i = 0; i < 14; i++) {
+    const d = new Date(nu); d.setDate(nu.getDate()+i);
+    const dw=d.getDay(), mn=d.getMonth(), jr=d.getFullYear(), nr=d.getDate();
+    const s = `${jr}-${String(mn+1).padStart(2,'0')}-${String(nr).padStart(2,'0')}`;
+    const vast = [];
+    if (dw === 0) vast.push({ tijd:"11:00", type:"viering", tekst:"Zondagsviering \u2014 Goede Bijstand" });
+    if (dw === 6) vast.push({ tijd:"16:30", type:"viering", tekst:"Mis \u2014 Finis Terrae" });
+    const evs = [...vast, ...(agendaExtra[s]||[])];
+    if (!evs.length) continue;
+    rijen++;
+    if (mn!==hm){ hm=mn; h+=`<div class="agenda-maand-header">${MNLANG[mn]} ${jr}</div>`; }
+    const kl=['agenda-dag',(dw===0||dw===6)?'weekend':'',i===0?'vandaag':''].filter(Boolean).join(' ');
+    h+=`<div class="${kl}"><div class="datum-cel">
+      <span class="dag-naam">${i===0?'Vandaag':DNKORT[dw]}</span>
+      <span class="dag-nr">${nr}</span>
+      <span class="maand-kort">${MNKORT[mn]}</span>
+    </div><div class="ev-cel">`;
+    evs.forEach(ev=>{
+      h+=`<div class="evenement"><span class="ev-tijd">${ev.tijd||''}</span><span class="ev-icoon">${EVICON[ev.type]||'\u271D'}</span><span>${ev.tekst}</span></div>`;
+    });
+    h+='</div></div>';
+  }
+  if (!rijen) h += '<div style="padding:0.5rem 0.9rem;font-style:italic;color:var(--muted);font-size:0.86rem;">Geen vieringen gepland in de komende twee weken.</div>';
+  h+='</div>';
+  h+=`<div class="agenda-legenda"><span>\u271D Viering</span><span>\u25C6 Activiteit/Ontmoeting</span><span>\uD83C\uDFB5 Muziek/Concert</span></div>`;
+  return h;
+}
+
+function fotoBlok(id, titel, omschr, icoon, map) {
+  const ph = `<div class="foto-item"><div class="foto-ph"><span class="fi">${icoon}</span>Foto toevoegen</div></div>`;
+  return `<div class="foto-categorie">
+    <h3 class="foto-cat-titel">${titel}</h3>
+    <p class="foto-omschr">${omschr}</p>
+    <div class="foto-grid">${ph}${ph}${ph}</div>
+    
+  </div>`;
+}
+
+function openLb(el) {
+  const img = (el.tagName==='IMG') ? el : el.querySelector('img');
+  if(!img) return;
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-cap').textContent = img.dataset.titel||img.alt||'';
+  document.getElementById('lightbox').classList.add('open');
+}
+function sluitLb(){ document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') sluitLb(); });
+document.getElementById('lightbox').addEventListener('click', function(e){ if(e.target===this) sluitLb(); });
+
 function getSidebar() {
   return `
   <img src="${EXT}" alt="Onze-Lieve-Vrouw van Goede Bijstand" class="sidebar-photo">
@@ -210,501 +316,561 @@ function getSidebar() {
   </div>
   <div class="sidebar-box">
     <h3>Steunen</h3>
-    <p>Wilt u de parochie steunen?<br><a onclick="navigate('bijstand')" onclick="showSub('steunen')">Meer info &#8594;</a></p>
+    <p>Wilt u de parochie steunen?<br><a onclick="navigate('bijstand')">Meer info &#8594;</a></p>
   </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════
-// PAGINA'S
-// ═══════════════════════════════════════════════════════════════
 const pages = {
 
-  // ── HOME ──────────────────────────────────────────────────────
-  home: {
-    title: 'Home',
-    content: `
-      <section>
-        <img src="${EXT}" alt="Onze-Lieve-Vrouw van Goede Bijstand" class="church-photo" style="height:260px;">
-        <p class="photo-caption">De barokke gevel van de Kerk van Goede Bijstand aan de Kolenmarkt &#169; Johan Bakker / CC Wikimedia</p>
+  home: { title:'Home', content:`
+    <section>
+      <img src="${EXT}" alt="Kerk van Goede Bijstand" class="church-photo" style="height:260px;">
+      <p class="photo-caption">De barokke gevel van de Kerk van Goede Bijstand aan de Kolenmarkt &#169; Johan Bakker / CC Wikimedia</p>
 
-        <h2>Gebed in de geest van Taiz&#233;</h2>
-        <p><em>Elke derde zaterdag van de maand</em></p>
-        <p>Op vraag van priester Johnny De Mot en met het enthousiasme van enkele jongeren en parochianen, organiseren we &#233;&#233;n keer per maand een gebed met liederen van Taiz&#233;, in onze kerk van Goede Bijstand, Kolenmarkt 1000 Brussel.</p>
-        <p>De kerk ligt in het centrum, waar de stad &#8217;s avonds tot leven komt. Het gebed zal plaatsvinden met de deuren open &#8212; we hopen dat mensen binnenkomen en een moment met ons delen.</p>
-        <h3>Verloop van de avond</h3>
-        <p><strong>20.00&nbsp;u</strong> &#8212; Gebed &nbsp;|&nbsp; <strong>20.40&nbsp;u</strong> &#8212; Stilte met instrumentale Taiz&#233; liederen &nbsp;|&nbsp; <strong>21.00&nbsp;u</strong> &#8212; Kort gebed en zang. Dit herhalen we elk kwartier tot 22.30&nbsp;u.</p>
-        <p>Voor meer informatie: <a href="mailto:bep.saintandre@gmail.com">bep.saintandre@gmail.com</a></p>
-        <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        <h3>Datums 2025&#8211;2026</h3>
-        <ul class="date-list">
-          <li>Za 20 september 2025</li><li>Za 18 oktober 2025</li>
-          <li>Za 22 november 2025</li><li>Za 20 december 2025</li>
-          <li>Za 17 januari 2026</li><li>Za 21 februari 2026</li>
-          <li>Za 21 maart 2026</li><li>Za 18 april 2026</li>
-          <li>Za 16 mei 2026</li><li>Za 20 juni 2026</li>
-          <li>Za 18 juli 2026</li><li>Za 15 augustus 2026</li>
-        </ul>
-      </section>
+      <h2>Agenda &mdash; Vieringen</h2>
+      <p style="font-style:italic;color:var(--muted);margin-bottom:0.6rem;">Vieringen in de komende twee weken.</p>
+      ${agendaHTML()}
+    </section>
 
-      <section>
-        <h2>Bijstand by Night</h2>
-        <p><em>Elke vrijdagavond vanaf 3 mei 2026 &#8212; tussen 18 en 22 uur</em></p>
-        <p>Van mei tot en met augustus stellen we de Bijstandskerk <strong>elke vrijdagavond</strong> open. We delen de kerk, bij stilte of serene muziek, met vaak onverwachte, mooie mens-ontmoetingen.</p>
-        <p>Contacteer <a href="mailto:eheesen@hotmail.com">Nieneke</a> of <a href="mailto:danny.decock59@yahoo.com">Danny</a> voor meer info.</p>
-      </section>
+    <section>
+      <h2>Paulusgemeenschappen</h2>
+      <p>Onze parochie Goede Bijstand maakt deel uit van de <strong>Paulusgemeenschappen</strong>, een samenwerkingsverband van Nederlandstalige geloofsgemeenschappen in Brussel rond de kerken van Onze-Lieve-Vrouw van Vreugde (Anderlecht), Onze-Lieve-Vrouw van Goede Bijstand (Centrum), Sint-Pieter (Ukkel), Sint-Jozef (Evere), Sint-Martinus (Ganshoren) en de Verrijzenis (Molenbeek).</p>
+      <div class="paulus-box">
+        <h3>Waarom &lsquo;Paulusgemeenschappen&rsquo;?</h3>
+        <p>De naam verwijst naar de apostel Paulus, die van gemeenschap naar gemeenschap trok om te bemoedigen en te ondersteunen &mdash; zonder de gemeenschappen hun eigenheid te ontnemen. Zo kiezen ook onze pastores voor een dienend leiderschap: de gemeenschappen nemen zelf verantwoordelijkheid, elk met hun eigen charisma&rsquo;s en accenten.</p>
+        <p>De samenwerking groeit vanuit een gedeelde zorg voor de toekomst van de Nederlandstalige kerk in Brussel. Het pastoresteam &mdash; Johnny De Mot, Guido Vandeperre, Peter Baekelmans, Chris Ruelens, Ria Dereymaeker, Ellen Keersmaekers en Mariette Dhondt &mdash; werkt nauw samen over de gemeenschappen heen.</p>
+        <a class="paulus-knop" href="https://www.paulusgemeenschappen.be/nl" target="_blank" rel="noopener">Bezoek paulusgemeenschappen.be &#8594;</a>
+      </div>
+    </section>
 
-      <section>
-        <h2>Kerstbrief 2025</h2>
-        <p><strong>De Kleine Zusters van Jezus in Belgi&#235;</strong></p>
-        <p><a onclick="navigate('activiteiten')">Lees hier de Kerstbrief 2025 &#8594;</a></p>
-      </section>
+    <section>
+      <h2>Gebed in de geest van Taiz&#233;</h2>
+      <p><em>Elke derde zaterdag van de maand</em></p>
+      <p>Op vraag van priester Johnny De Mot en met het enthousiasme van enkele jongeren en parochianen, organiseren we &#233;&#233;n keer per maand een gebed met liederen van Taiz&#233;, in onze kerk van Goede Bijstand, Kolenmarkt 1000 Brussel.</p>
+      <p>De kerk ligt in het centrum, waar de stad &#8217;s avonds tot leven komt. Het gebed zal plaatsvinden met de deuren open &mdash; we hopen dat mensen binnenkomen en een moment met ons delen.</p>
+      <h3>Verloop van de avond</h3>
+      <p><strong>20.00&nbsp;u</strong> &mdash; Gebed &nbsp;|&nbsp; <strong>20.40&nbsp;u</strong> &mdash; Stilte met instrumentale Taiz&#233; liederen &nbsp;|&nbsp; <strong>21.00&nbsp;u</strong> &mdash; Kort gebed en zang. Dit herhalen we elk kwartier tot 22.30&nbsp;u.</p>
+      <p>Voor meer informatie: <a href="mailto:bep.saintandre@gmail.com">bep.saintandre@gmail.com</a></p>
+      <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
+      <h3>Datums 2026</h3>
+      <ul class="date-list">
+        <li>Za 21 maart 2026</li><li>Za 18 april 2026</li>
+        <li>Za 16 mei 2026</li><li>Za 20 juni 2026</li>
+        <li>Za 18 juli 2026</li><li>Za 15 augustus 2026</li>
+      </ul>
+    </section>
 
-      <section>
-        <h2>Nieuws</h2>
-        <div class="news-item" onclick="navigate('vieringen')">
-          <div class="tag">Vieringen</div>
-          <div class="ni-title">Overzicht Vieringen Januari &#8211; Februari</div>
+    <section>
+      <h2>Bijstand by Night</h2>
+      <p><em>Elke vrijdagavond vanaf 3 mei 2026 &mdash; tussen 18 en 22 uur</em></p>
+      <p>Van mei tot en met augustus stellen we de Bijstandskerk <strong>elke vrijdagavond</strong> open. We delen de kerk, bij stilte of serene muziek, met vaak onverwachte, mooie mens-ontmoetingen.</p>
+      <p>Contacteer <a href="mailto:eheesen@hotmail.com">Nieneke</a> of <a href="mailto:danny.decock59@yahoo.com">Danny</a> voor meer info.</p>
+    </section>
+
+    <section>
+      <h2>Kerstbrief 2025</h2>
+      <p><strong>De Kleine Zusters van Jezus in Belgi&#235;</strong></p>
+      <p><a onclick="navigate('activiteiten')">Lees hier de Kerstbrief 2025 &#8594;</a></p>
+    </section>
+
+    <section>
+      <h2>Nieuws</h2>
+      <div class="news-item" onclick="navigate('vieringen')"><div class="tag">Vieringen</div><div class="ni-title">Overzicht Vieringen Januari &ndash; Februari</div></div>
+      <div class="news-item" onclick="navigate('homilie')"><div class="tag">Homilies</div><div class="ni-title">Kerstmis: moet ik zwijgen?</div></div>
+      <div class="news-item" onclick="navigate('overlijden')"><div class="tag">Overlijden</div><div class="ni-title">Paul Huyskens</div></div>
+      <div class="news-item" onclick="navigate('samenwerking')"><div class="tag">Samenwerking</div><div class="ni-title">Kamino &ndash; Jongerennetwerk</div></div>
+      <div class="news-item" onclick="navigate('bezinning')"><div class="tag">Bezinningsteksten</div><div class="ni-title">Koud Gepakt, Warm Gedragen</div></div>
+    </section>` },
+
+  bijstand: { title:'De Goede Bijstand', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> De Goede Bijstand</div>
+      <div class="subnav">
+        <a onclick="showSub('welkom')"        data-sub="welkom"        class="subnav-active">Welkom</a>
+        <a onclick="showSub('krachtlijnen')"  data-sub="krachtlijnen">Krachtlijnen</a>
+        <a onclick="showSub('gemeenschap')"   data-sub="gemeenschap">Gemeenschap</a>
+        <a onclick="showSub('team')"          data-sub="team">Team</a>
+        <a onclick="showSub('parochieploeg')" data-sub="parochieploeg">Parochieploeg</a>
+        <a onclick="showSub('kerkfabriek')"   data-sub="kerkfabriek">Kerkfabriek</a>
+        <a onclick="showSub('gebed')"         data-sub="gebed">Gebed</a>
+        <a onclick="showSub('steunen')"       data-sub="steunen">Steunen</a>
+      </div>
+      <div id="sub-welkom" class="subpage">
+        <h2>Welkom</h2>
+        <div class="photo-grid">
+          <div><img src="${EXT}" alt="Exterieur kerk" style="width:100%;height:200px;object-fit:cover;border-radius:4px;border:3px solid var(--pale-blue);"><p class="photo-caption">Gevel Kolenmarkt &#169; Johan Bakker / CC Wikimedia</p></div>
+          <div><img src="${INT}" alt="Interieur kerk" style="width:100%;height:200px;object-fit:cover;border-radius:4px;border:3px solid var(--pale-blue);"><p class="photo-caption">Interieur &#169; Jean-Paul Remy / visit.brussels</p></div>
         </div>
-        <div class="news-item" onclick="navigate('homilie')">
-          <div class="tag">Homilies</div>
-          <div class="ni-title">Kerstmis: moet ik zwijgen?</div>
-        </div>
-        <div class="news-item" onclick="navigate('overlijden')">
-          <div class="tag">Overlijden</div>
-          <div class="ni-title">Paul Huyskens</div>
-        </div>
-        <div class="news-item" onclick="navigate('samenwerking')">
-          <div class="tag">Samenwerking</div>
-          <div class="ni-title">Kamino &#8211; Jongerennetwerk</div>
-        </div>
-        <div class="news-item" onclick="navigate('bezinning')">
-          <div class="tag">Bezinningsteksten</div>
-          <div class="ni-title">Koud Gepakt, Warm Gedragen</div>
-        </div>
-      </section>`
-  },
-
-  // ── DE GOEDE BIJSTAND ─────────────────────────────────────────
-  bijstand: {
-    title: 'De Goede Bijstand',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> De Goede Bijstand</div>
-
-        <div class="subnav">
-          <a onclick="showSub('welkom')"        data-sub="welkom"        class="subnav-active">Welkom</a>
-          <a onclick="showSub('krachtlijnen')"  data-sub="krachtlijnen">Krachtlijnen</a>
-          <a onclick="showSub('gemeenschap')"   data-sub="gemeenschap">Gemeenschap</a>
-          <a onclick="showSub('team')"          data-sub="team">Team</a>
-          <a onclick="showSub('parochieploeg')" data-sub="parochieploeg">Parochieploeg</a>
-          <a onclick="showSub('kerkfabriek')"   data-sub="kerkfabriek">Kerkfabriek</a>
-          <a onclick="showSub('gebed')"         data-sub="gebed">Gebed</a>
-          <a onclick="showSub('steunen')"       data-sub="steunen">Steunen</a>
-        </div>
-
-        <!-- WELKOM -->
-        <div id="sub-welkom" class="subpage">
-          <h2>Welkom</h2>
-          <div class="photo-grid">
-            <div>
-              <img src="${EXT}" alt="Exterieur kerk" style="width:100%;height:200px;object-fit:cover;border-radius:4px;border:3px solid var(--pale-blue);">
-              <p class="photo-caption">Gevel Kolenmarkt &#169; Johan Bakker / CC Wikimedia</p>
-            </div>
-            <div>
-              <img src="${INT}" alt="Interieur kerk" style="width:100%;height:200px;object-fit:cover;border-radius:4px;border:3px solid var(--pale-blue);">
-              <p class="photo-caption">Interieur &#169; Jean-Paul Remy / visit.brussels</p>
-            </div>
-          </div>
-          <p>Welkom op de website van de gemeenschap De Goede Bijstand, een Nederlandstalige parochie in het hartje van Brussel.</p>
-          <p>Misschien bent u benieuwd naar wie we zijn en wat we doen.<br>
-          Misschien wilt u ons een vraag stellen.<br>
-          Misschien zag u ons op tv en bent u op zoek naar een tekst uit de viering.<br>
-          Misschien bent u gewoon op zoek &#8230;</p>
-          <p>Hoe dan ook welkom. Deze website is nog niet afgewerkt maar ergens onderweg tussen taal en teken, inhoud en vorm &#8230; In beweging dus, zoals ook onze gemeenschap onderweg is.</p>
-          <p>We hopen dat u vindt wat u zoekt. En niet alleen op onze website. Wordt u geboeid door ons verhaal, kom dan zeker eens langs. We zouden het fijn vinden u te ontmoeten in het hartje van Brussel.</p>
-        </div>
-
-        <!-- KRACHTLIJNEN -->
-        <div id="sub-krachtlijnen" class="subpage" style="display:none;">
-          <h2>Krachtlijnen</h2>
-          <p><em>Wie zijn we en van waaruit leven en werken we?</em></p>
-          <p>De vraag is gemakkelijker dan het antwoord. Duidelijk is wel dat we leven en werken vanuit een inspiratie, een krachtbron die we bij elkaar herkennen en die ons verbindt en sterkt.</p>
-          <p><strong>Verbinden:</strong> niet in de zin dat wij altijd dezelfde taal spreken, dat wij hetzelfde denken en voelen, dat wij altijd onze antwoorden klaar hebben. Neen, onze gemeenschap is zeer divers en dus moet het wel een open gemeenschap zijn, rijk aan dialoog en discussie.</p>
-          <p><strong>Verbinden:</strong> wel in de zin dat ieder probeert op zijn manier woord en daad bij elkaar te brengen in zorg voor elkaar en voor de meest kwetsbaren, individueel of in de vele werkingen en projecten die vanuit de gemeenschap zijn gegroeid of waarmee we nauw samenwerken.</p>
-          <p><strong>Verbinden doen we</strong>, jonge mensen met onze gemeenschap, als we samen levensmomenten vieren.</p>
-          <p><strong>Verbonden zijn we</strong>, als we vieren in de kring, ongedwongen en geborgen.</p>
-          <p><strong>Verbonden zijn we</strong>, als we, ge&#239;nspireerd door Jezus, brood en wijn delen omdat we ook brood en wijn voor elkaar willen zijn.</p>
-          <p>Wij mogen hierbij in een lange christelijke traditie van solidariteit en zorg gaan staan die gedragen wordt door de God van leven en belofte, Jahweh: ik ben er, ik zal er zijn voor u.</p>
-          <p>Als parochiegemeenschap leven en werken we vanuit de overtuiging dat een mens niet gemaakt is om alleen op weg te gaan, maar om er te zijn voor elkaar en zo deze eeuwenoude belofte telkens weer nieuwe inhoud en vorm te geven.</p>
-        </div>
-
-        <!-- GEMEENSCHAP -->
-        <div id="sub-gemeenschap" class="subpage" style="display:none;">
-          <h2>Onze gemeenschap</h2>
-          <img src="${INT}" alt="Interieur kerk" class="church-photo" style="height:220px;">
-          <p class="photo-caption">&#169; Jean-Paul Remy / visit.brussels</p>
-          <p><em>De gemeenschap is het hart van onze parochie. Onmisbaar kloppend.</em></p>
-          <p>Iedereen is welkom. Onze deuren staan open. Het wel en wee van het leven en de stad mag en kan bij ons binnenstromen.</p>
-          <p>Mensen zoeken gemeenschap om te delen, te luisteren, te troosten, te vieren &#8230;<br>
-          Gemeenschap verwelkomt mensen om te delen, te luisteren, te troosten, te vieren &#8230;</p>
-          <p>Centraal staan de vele ontmoetingen in evenveel vormen. Op zondag treffen we elkaar in de viering die begint in de kerk en eindigt bij een aperitiefje in De Schelp (parochiezaaltje). Hier groeien initiatieven en worden afspraken beklonken.</p>
-          <p>In de gemeenschap krijgt het verbond tussen God en mensen inhoud en vorm. Ge&#239;nspireerd door Jezus van Nazareth delen we kracht, troost en bemoediging.</p>
-        </div>
-
-        <!-- TEAM -->
-        <div id="sub-team" class="subpage" style="display:none;">
-          <h2>Team</h2>
-          <p>Het team bestaat uit twee pastores: twee mannen, twee priesters. Het team draagt de verantwoordelijkheid om de krachten, de opdrachten en de zending van de gemeenschap te waarborgen en te ondersteunen.</p>
-          <div class="partner-item" style="margin-top:1.2rem;">
-            <strong>Johnny De Mot</strong>
-            <p>Pastoor Goede Bijstand, Verantwoordelijke Nederlandstalige pastoraal Brussel centrum<br>
-            <a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a></p>
-          </div>
-        </div>
-
-        <!-- PAROCHIEPLOEG -->
-        <div id="sub-parochieploeg" class="subpage" style="display:none;">
-          <h2>Parochieploeg</h2>
-          <p>De parochieploeg bestaat uit vijf leden: de bedienaar, twee pastores en twee leken (drie vrouwen en twee mannen).</p>
-          <p>De parochieploeg vergadert elke eerste woensdagvoormiddag van de maand en bespreekt het reilen en zeilen van de parochiegemeenschap. Voorstellen worden besproken en uitgewerkt.</p>
-          <div class="partner-item" style="margin-top:1rem;">
-            <strong>Samenstelling</strong>
-            <p>Johnny De Mot, Magda De Cock, Goedele Miseur, Lieven Baert, Ellen Keersmaekers</p>
-          </div>
-        </div>
-
-        <!-- KERKFABRIEK -->
-        <div id="sub-kerkfabriek" class="subpage" style="display:none;">
-          <h2>Kerkfabriek</h2>
-          <p>De grondwet (artikelen 19 tot 21) garandeert de vrijheid van alle erediensten en verbiedt de burgerlijke overheid tussen te komen bij de benoeming van bedienaren van de eredienst en de werking ervan.</p>
-          <p>Erediensten zijn in 2002 een gewestbevoegdheid geworden inzake de erkenning van plaatselijke gemeenschappen (parochies), de organisatie en financiering van de instellingen belast met het beheer van de temporali&#235;n van de erediensten en de huisvestingstoelagen voor de bedienaren.</p>
-          <p>Op 23 december 2021 werd de organieke ordonnantie betreffende het beheer van de materi&#235;le belangen van de erkende plaatselijke levensbeschouwelijke gemeenschappen gepubliceerd in het Belgisch Staatsblad. Zo hervormt het Brussels Hoofdstedelijk Gewest de wettelijke basis voor levensbeschouwelijke instellingen.</p>
-          <p>Meer info: <a href="https://plaatselijke-besturen.brussels/levensbeschouwelijke-instellingen" target="_blank">Brussel Plaatselijke Besturen &#8594;</a></p>
-          <p>De raad van bestuur vergadert ten minste eens per trimester, en bestaat ten minste voor &#233;&#233;n derde uit vrouwen.</p>
-          <div class="partner-item" style="margin-top:1rem;">
-            <strong>Samenstelling</strong>
-            <p>Evelien Leys &#8212; voorzitter<br>
-            Lieven Baert &#8212; secretaris<br>
-            Lode Vanderbeken &#8212; penningmeester<br>
-            Laura Lievevrouw, Freddy Gerard</p>
-          </div>
-          <p style="margin-top:1rem;">Contact: <a href="mailto:2096@diomb.be">2096@diomb.be</a></p>
-        </div>
-
-        <!-- GEBED -->
-        <div id="sub-gebed" class="subpage" style="display:none;">
-          <h2>Gebed: Forgive Me</h2>
-          <div class="homilie">
-            <p>Forgive me<br>
-            Lord, You are my Friend<br>
-            Your love has no end<br>
-            Now I seek Your face<br>
-            I long for Your embrace<br>
-            Help me, Jesus, sweet Jesus<br>
-            Jesus, take away all my fear<br>
-            Let me feel that You are near<br>
-            My Saviour, my Redeemer</p>
-            <p>Forgive me<br>
-            I did not trust Your Word<br>
-            I brought You pain and hurt<br>
-            Yet, I know You forgive<br>
-            My Jesus, sweet Jesus</p>
-            <p>For me, You died on the cross<br>
-            Without You, there&#8217;s only loss<br>
-            You&#8217;re the Light of the world, Lord<br>
-            Jesus, You alone are my soul&#8217;s hope<br>
-            With Your Grace, I&#8217;ll surely cope<br>
-            Because You love me, You love me eternally!</p>
-            <p style="font-size:0.9rem;color:var(--muted);font-style:italic;margin-top:1rem;">Bewerkt en ons toegestuurd door Ignace Menschaert uit Kerksken</p>
-          </div>
-        </div>
-
-        <!-- STEUNEN -->
-        <div id="sub-steunen" class="subpage" style="display:none;">
-          <h2>Steunen</h2>
-          <p>Bent u op zoek naar hoe u onze parochie kan steunen?</p>
-          <p>Dat kan door een gift te storten op volgend rekeningnummer:</p>
-          <div class="partner-item" style="margin-top:1rem;font-size:1.1rem;letter-spacing:0.05em;">
-            <strong>BE35 4331 0715 7137</strong>
-          </div>
-          <p style="margin-top:1rem;">Voor vragen: <a href="mailto:2096@diomb.be">2096@diomb.be</a></p>
-        </div>
-
-      </section>`
-  },
-
-  // ── VIERINGEN ─────────────────────────────────────────────────
-  vieringen: {
-    title: 'Vieringen',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Vieringen</div>
-        <h2>Vieringen</h2>
+        <p>Welkom op de website van de gemeenschap De Goede Bijstand, een Nederlandstalige parochie in het hartje van Brussel.</p>
+        <p>Misschien bent u benieuwd naar wie we zijn en wat we doen.<br>Misschien wilt u ons een vraag stellen.<br>Misschien zag u ons op tv en bent u op zoek naar een tekst uit de viering.<br>Misschien bent u gewoon op zoek &#8230;</p>
+        <p>Hoe dan ook welkom. Deze website is nog niet afgewerkt maar ergens onderweg tussen taal en teken, inhoud en vorm &#8230; In beweging dus, zoals ook onze gemeenschap onderweg is.</p>
+        <p>We hopen dat u vindt wat u zoekt. En niet alleen op onze website. Wordt u geboeid door ons verhaal, kom dan zeker eens langs. We zouden het fijn vinden u te ontmoeten in het hartje van Brussel.</p>
+      </div>
+      <div id="sub-krachtlijnen" class="subpage" style="display:none;">
+        <h2>Krachtlijnen</h2>
+        <p><em>Wie zijn we en van waaruit leven en werken we?</em></p>
+        <p>De vraag is gemakkelijker dan het antwoord. Duidelijk is wel dat we leven en werken vanuit een inspiratie, een krachtbron die we bij elkaar herkennen en die ons verbindt en sterkt.</p>
+        <p><strong>Verbinden:</strong> niet in de zin dat wij altijd dezelfde taal spreken, dat wij hetzelfde denken en voelen, dat wij altijd onze antwoorden klaar hebben. Neen, onze gemeenschap is zeer divers en dus moet het wel een open gemeenschap zijn, rijk aan dialoog en discussie.</p>
+        <p><strong>Verbinden:</strong> wel in de zin dat ieder probeert op zijn manier woord en daad bij elkaar te brengen in zorg voor elkaar en voor de meest kwetsbaren, individueel of in de vele werkingen en projecten die vanuit de gemeenschap zijn gegroeid of waarmee we nauw samenwerken.</p>
+        <p><strong>Verbinden doen we</strong>, jonge mensen met onze gemeenschap, als we samen levensmomenten vieren.</p>
+        <p><strong>Verbonden zijn we</strong>, als we vieren in de kring, ongedwongen en geborgen.</p>
+        <p><strong>Verbonden zijn we</strong>, als we, ge&#239;nspireerd door Jezus, brood en wijn delen omdat we ook brood en wijn voor elkaar willen zijn.</p>
+        <p>Wij mogen hierbij in een lange christelijke traditie van solidariteit en zorg gaan staan die gedragen wordt door de God van leven en belofte, Jahweh: ik ben er, ik zal er zijn voor u.</p>
+        <p>Als parochiegemeenschap leven en werken we vanuit de overtuiging dat een mens niet gemaakt is om alleen op weg te gaan, maar om er te zijn voor elkaar en zo deze eeuwenoude belofte telkens weer nieuwe inhoud en vorm te geven.</p>
+      </div>
+      <div id="sub-gemeenschap" class="subpage" style="display:none;">
+        <h2>Onze gemeenschap</h2>
         <img src="${INT}" alt="Interieur kerk" class="church-photo" style="height:220px;">
+        <p class="photo-caption">&#169; Jean-Paul Remy / visit.brussels</p>
+        <p><em>De gemeenschap is het hart van onze parochie. Onmisbaar kloppend.</em></p>
+        <p>Iedereen is welkom. Onze deuren staan open. Het wel en wee van het leven en de stad mag en kan bij ons binnenstromen.</p>
+        <p>Mensen zoeken gemeenschap om te delen, te luisteren, te troosten, te vieren &#8230;<br>Gemeenschap verwelkomt mensen om te delen, te luisteren, te troosten, te vieren &#8230;</p>
+        <p>Centraal staan de vele ontmoetingen in evenveel vormen. Op zondag treffen we elkaar in de viering die begint in de kerk en eindigt bij een aperitiefje in De Schelp (parochiezaaltje). Hier groeien initiatieven en worden afspraken beklonken.</p>
+        <p>In de gemeenschap krijgt het verbond tussen God en mensen inhoud en vorm. Ge&#239;nspireerd door Jezus van Nazareth delen we kracht, troost en bemoediging.</p>
+      </div>
+      <div id="sub-team" class="subpage" style="display:none;">
+        <h2>Team</h2>
+        <p>Het team bestaat uit twee pastores: twee mannen, twee priesters. Het team draagt de verantwoordelijkheid om de krachten, de opdrachten en de zending van de gemeenschap te waarborgen en te ondersteunen.</p>
+        <div class="partner-item" style="margin-top:1.2rem;"><strong>Johnny De Mot</strong><p>Pastoor Goede Bijstand, Verantwoordelijke Nederlandstalige pastoraal Brussel centrum<br><a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a></p></div>
+      </div>
+      <div id="sub-parochieploeg" class="subpage" style="display:none;">
+        <h2>Parochieploeg</h2>
+        <p>De parochieploeg bestaat uit vijf leden: de bedienaar, twee pastores en twee leken (drie vrouwen en twee mannen).</p>
+        <p>De parochieploeg vergadert elke eerste woensdagvoormiddag van de maand en bespreekt het reilen en zeilen van de parochiegemeenschap. Voorstellen worden besproken en uitgewerkt.</p>
+        <div class="partner-item" style="margin-top:1rem;"><strong>Samenstelling</strong><p>Johnny De Mot, Magda De Cock, Goedele Miseur, Lieven Baert, Ellen Keersmaekers</p></div>
+      </div>
+      <div id="sub-kerkfabriek" class="subpage" style="display:none;">
+        <h2>Kerkfabriek</h2>
+        <p>De grondwet (artikelen 19 tot 21) garandeert de vrijheid van alle erediensten en verbiedt de burgerlijke overheid tussen te komen bij de benoeming van bedienaren van de eredienst en de werking ervan.</p>
+        <p>Erediensten zijn in 2002 een gewestbevoegdheid geworden inzake de erkenning van plaatselijke gemeenschappen (parochies), de organisatie en financiering van de instellingen belast met het beheer van de temporali&#235;n van de erediensten en de huisvestingstoelagen voor de bedienaren.</p>
+        <p>Op 23 december 2021 werd de organieke ordonnantie betreffende het beheer van de materi&#235;le belangen van de erkende plaatselijke levensbeschouwelijke gemeenschappen gepubliceerd in het Belgisch Staatsblad. Zo hervormt het Brussels Hoofdstedelijk Gewest de wettelijke basis voor levensbeschouwelijke instellingen.</p>
+        <p>Meer info: <a href="https://plaatselijke-besturen.brussels/levensbeschouwelijke-instellingen" target="_blank">Brussel Plaatselijke Besturen &#8594;</a></p>
+        <p>De raad van bestuur vergadert ten minste eens per trimester, en bestaat ten minste voor &#233;&#233;n derde uit vrouwen.</p>
+        <div class="partner-item" style="margin-top:1rem;"><strong>Samenstelling</strong><p>Evelien Leys &mdash; voorzitter<br>Lieven Baert &mdash; secretaris<br>Lode Vanderbeken &mdash; penningmeester<br>Laura Lievevrouw, Freddy Gerard</p></div>
+        <p style="margin-top:1rem;">Contact: <a href="mailto:2096@diomb.be">2096@diomb.be</a></p>
+      </div>
+      <div id="sub-gebed" class="subpage" style="display:none;">
+        <h2>Gebed: Forgive Me</h2>
+        <div class="homilie">
+          <p>Forgive me<br>Lord, You are my Friend<br>Your love has no end<br>Now I seek Your face<br>I long for Your embrace<br>Help me, Jesus, sweet Jesus<br>Jesus, take away all my fear<br>Let me feel that You are near<br>My Saviour, my Redeemer</p>
+          <p>Forgive me<br>I did not trust Your Word<br>I brought You pain and hurt<br>Yet, I know You forgive<br>My Jesus, sweet Jesus</p>
+          <p>For me, You died on the cross<br>Without You, there&#8217;s only loss<br>You&#8217;re the Light of the world, Lord<br>Jesus, You alone are my soul&#8217;s hope<br>With Your Grace, I&#8217;ll surely cope<br>Because You love me, You love me eternally!</p>
+          <p style="font-size:0.9rem;color:var(--muted);font-style:italic;margin-top:1rem;">Bewerkt en ons toegestuurd door Ignace Menschaert uit Kerksken</p>
+        </div>
+      </div>
+      <div id="sub-steunen" class="subpage" style="display:none;">
+        <h2>Steunen</h2>
+        <p>Bent u op zoek naar hoe u onze parochie kan steunen?</p>
+        <p>Dat kan door een gift te storten op volgend rekeningnummer:</p>
+        <div class="partner-item" style="margin-top:1rem;font-size:1.1rem;letter-spacing:0.05em;"><strong>BE35 4331 0715 7137</strong></div>
+        <p style="margin-top:1rem;">Voor vragen: <a href="mailto:2096@diomb.be">2096@diomb.be</a></p>
+      </div>
+    </section>` },
+
+  vieringen: { title:'Vieringen', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Vieringen</div>
+      <h2>Vieringen</h2>
+
+      <div class="subnav">
+        <a onclick="showVierSub('overzicht')" data-vsub="overzicht" class="subnav-active">Overzicht</a>
+        <a onclick="showVierSub('homilies')"  data-vsub="homilies">Homilies</a>
+        <a onclick="showVierSub('bezinning')" data-vsub="bezinning">Bezinningsteksten</a>
+        <a onclick="showVierSub('fotos')"     data-vsub="fotos">&#128247; Foto&#8217;s</a>
+      </div>
+
+      <!-- ── OVERZICHT ── -->
+      <div id="vsub-overzicht" class="vsub">
+        <img src="${INT}" alt="Interieur kerk" class="church-photo" style="height:200px;">
         <p class="photo-caption">Het interieur van de Kerk van Goede Bijstand &#169; Jean-Paul Remy / visit.brussels</p>
         <h3>Vaste vieringen</h3>
         <table class="viering-table">
           <thead><tr><th>Kerk</th><th>Dag</th><th>Uur</th><th>Bijzonderheden</th></tr></thead>
           <tbody>
+            <tr><td>Finis Terrae</td><td>Elke zaterdag</td><td>16.30&nbsp;u</td><td>&mdash;</td></tr>
             <tr><td>Goede Bijstand</td><td>Elke zondag</td><td>11.00&nbsp;u</td><td>3e zondag: kindernevendienst</td></tr>
-            <tr><td>Finis Terrae</td><td>Elke zaterdag</td><td>16.30&nbsp;u</td><td>&#8212;</td></tr>
-          </tbody>
-        </table>
-        <h3>Januari 2026</h3>
-        <table class="viering-table">
-          <thead><tr><th>Datum</th><th>Thema</th></tr></thead>
-          <tbody>
-            <tr><td>Zo 4 januari</td><td>2e zondag na Kerstmis</td></tr>
-            <tr><td>Zo 11 januari</td><td>Doopsel van de Heer</td></tr>
-            <tr><td>Zo 18 januari</td><td>2e zondag &#8212; met Goede Bijtjes &amp; Mosterdzaadjes</td></tr>
-            <tr><td>Zo 25 januari</td><td>3e zondag door het jaar</td></tr>
-          </tbody>
-        </table>
-        <h3>Februari 2026</h3>
-        <table class="viering-table">
-          <thead><tr><th>Datum</th><th>Thema</th></tr></thead>
-          <tbody>
-            <tr><td>Zo 1 februari</td><td>4e zondag door het jaar</td></tr>
-            <tr><td>Zo 8 februari</td><td>5e zondag door het jaar</td></tr>
-            <tr><td>Zo 15 februari</td><td>6e zondag &#8212; met Goede Bijtjes &amp; Mosterdzaadjes</td></tr>
-            <tr><td>Zo 22 februari</td><td>7e zondag door het jaar</td></tr>
           </tbody>
         </table>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        <p>Homilies van recente vieringen: <a onclick="navigate('homilie')">Bekijk homilies &#8594;</a></p>
-      </section>`
-  },
+        <h3>Komende vieringen</h3>
+        <div class="viering-list">
+        <div class="vl-item"><span class="vl-datum">Finis Terrae    Za 7 maart 2026 &mdash; 16.30&nbsp;u</span><span class="vl-tekst"></span></div>
+          <div class="vl-item"><span class="vl-datum">Goede Bijstand    Zo 8 maart 2026 &mdash; 11&nbsp;u</span><span class="vl-tekst"></span></div>
+        </div>
+      </div>
 
-  // ── ACTIVITEITEN ──────────────────────────────────────────────
-  activiteiten: {
-    title: 'Activiteiten',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Activiteiten</div>
-        <h2>Activiteiten &amp; Evenementen</h2>
-        <h3>Kerstbrief 2025 &#8212; De Kleine Zusters van Jezus</h3>
+      <!-- ── HOMILIES ── -->
+      <div id="vsub-homilies" class="vsub" style="display:none;">
+        <p style="font-style:italic;color:var(--muted);margin-bottom:1rem;">Homilies van vieringen in de Kerk van Goede Bijstand.</p>
+        <ul class="archief-lijst">
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/20251225_Kerstmis/" target="_blank">Kerstmis: moet ik zwijgen?</a> <span class="al-datum">25 december 2025</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/20220424_Tvmis/" target="_blank">Homilie tv-mis</a> <span class="al-datum">24 april 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/20220116_Tvmis/" target="_blank">Homilie tv-mis</a> <span class="al-datum">16 januari 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/20220102_MijmeringenBijDeAfrikadag/" target="_blank">Mijmeringen bij de Afrikadag</a> <span class="al-datum">2 januari 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/20200413_Paaswake/" target="_blank">Paaswake</a> <span class="al-datum">13 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20191020/" target="_blank">Homilie viering</a> <span class="al-datum">20 oktober 2019</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20171217/" target="_blank">Homilie viering</a> <span class="al-datum">17 december 2017</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20171203/" target="_blank">Homilie viering, 1e adventszondag B</a> <span class="al-datum">3 december 2017</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20161218/" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 december 2016</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20141109/" target="_blank">Homilie viering</a> <span class="al-datum">9 november 2014</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomiliePausFranciscus20130319/" target="_blank">Homilie Paus Franciscus</a> <span class="al-datum">19 maart 2013</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20120212/" target="_blank">Homilie tv-mis</a> <span class="al-datum">12 februari 2012</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/2eZondagDoorHetJaar/" target="_blank">2e Zondag door het jaar</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieKerstmis20111225/" target="_blank">Homilie Kerstmis</a> <span class="al-datum">25 december 2011</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20111218/" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 december 2011</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/OverWeinigWaartGeTrouwOverVeelZalIkUAanstellen/" target="_blank">Over weinig waart ge trouw, over veel zal ik u aanstellen</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20110911/" target="_blank">Homilie tv-mis</a> <span class="al-datum">11 september 2011</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/ZieHetLamGods/" target="_blank">Zie het Lam Gods</a> <span class="al-datum">2e zondag A</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20101010/" target="_blank">Homilie tv-mis</a> <span class="al-datum">10 oktober 2010</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20100718/" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 juli 2010</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/BruiloftTeCana/" target="_blank">Bruiloft te Cana</a> <span class="al-datum">2e zondag C</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/ZijnErNogProfeten/" target="_blank">Zijn er nog profeten?</a> <span class="al-datum">14e zondag B</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/FilippusEnDeEthiopischeEunuch/" target="_blank">Filippus en de Ethiopische eunuch</a> <span class="al-datum">5e zondag van Pasen B</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/WieZeggenDeMensenDatIkBen/" target="_blank">Wie zeggen de mensen dat ik ben?</a> <span class="al-datum">21e zondag A</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/EenDuobaanPetrusEnPaulus/" target="_blank">Een duobaan: Petrus en Paulus</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/DeGoedeHerder/" target="_blank">De goede herder</a> <span class="al-datum">4e Paaszondag A</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/Lazarus/" target="_blank">Lazarus</a> <span class="al-datum">5e zondag van de vasten A</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/EenDroomVanGerechtigheid/" target="_blank">Een droom van gerechtigheid</a> <span class="al-datum">4e adventszondag A</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/JohannesDeProfeet/" target="_blank">Johannes, de profeet</a> <span class="al-datum">3e adventszondag A</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/EenVisioenVanJesaja/" target="_blank">Een visioen van Jesaja</a> <span class="al-datum">2e adventszondag A</span></li>
+        </ul>
+      </div>
+
+      <!-- ── BEZINNINGSTEKSTEN ── -->
+      <div id="vsub-bezinning" class="vsub" style="display:none;">
+        <p style="font-style:italic;color:var(--muted);margin-bottom:1rem;">Bezinningsteksten, getuigenissen en spirituele reflecties.</p>
+        <ul class="archief-lijst">
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20250921_KoudGepaktWarmGedragen/" target="_blank">Koud Gepakt, Warm Gedragen</a> <span class="al-datum">21 september 2025</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20250831_DagRita/" target="_blank">Dag Rita</a> <span class="al-datum">31 augustus 2025</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20240521_MindfulnessInEenChristelijkeSfeer/" target="_blank">Mindfulness in een christelijke sfeer</a> <span class="al-datum">21 mei 2024</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20240518_Pinksterwake/" target="_blank">Pinksterwake: de Geest zendt de Paulusgemeenschappen</a> <span class="al-datum">18 mei 2024</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20231007_BiddenIsMijNietGegeven/" target="_blank">Bidden is mij niet gegeven</a> <span class="al-datum">7 oktober 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20230929_GodvergetenDeVlaamseBisschoppenWillenSamenNieuweStappenZetten/" target="_blank">Godvergeten: de Vlaamse bisschoppen willen samen nieuwe stappen zetten</a> <span class="al-datum">29 september 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20230422_PausInInterviewCelibaatIsHerzienbaar/" target="_blank">Paus in interview: Celibaat is herzienbaar</a> <span class="al-datum">22 april 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20230415_Paasmorgen/" target="_blank">Paasmorgen</a> <span class="al-datum">15 april 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20230325_ZorgpastorGoedeleGetuigt/" target="_blank">Zorgpastor Goedele getuigt: &lsquo;De eerste 5 minuten zijn cruciaal&rsquo;</a> <span class="al-datum">25 maart 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20230311_GetuigenisAanslagen223/" target="_blank">Ex-basketballer S&eacute;bastien Bellin: &lsquo;Ik vergeef jullie&rsquo;</a> <span class="al-datum">11 maart 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20221005_EenPannenkoekAanDeAbdij/" target="_blank">Een pannenkoek aan de abdij!</a> <span class="al-datum">5 oktober 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220528_Pinksteren/" target="_blank">Pinksteren</a> <span class="al-datum">28 mei 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220507_AchtBloemenDieNaarMariaVerwijzenVoorInJouwTuin/" target="_blank">Acht bloemen die naar Maria verwijzen voor in jouw tuin</a> <span class="al-datum">7 mei 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220430_HoopOmhelzen/" target="_blank">Hoop Omhelzen</a> <span class="al-datum">30 april 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220423_Woedend/" target="_blank">Woedend</a> <span class="al-datum">23 april 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220417_InHetLichtVanGodsWoord/" target="_blank">In Het Licht Van Gods Woord</a> <span class="al-datum">17 april 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220409_VanWoestijnNaarPasen/" target="_blank">Van Woestijn naar Pasen</a> <span class="al-datum">9 april 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220402_DeVerlorenDochter/" target="_blank">De Verloren Dochter</a> <span class="al-datum">2 april 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220212_Februari/" target="_blank">Februari</a> <span class="al-datum">12 februari 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220205_Lichtmis/" target="_blank">Lichtmis</a> <span class="al-datum">5 februari 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20220102_Driekoningen10VragenEnAntwoorden/" target="_blank">Driekoningen: 10 vragen &amp; antwoorden</a> <span class="al-datum">2 januari 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211225_DeEeuwigeVlam/" target="_blank">De Eeuwige Vlam</a> <span class="al-datum">25 december 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211211_Zand/" target="_blank">Zand</a> <span class="al-datum">11 december 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211127_InDeBoot/" target="_blank">In De Boot</a> <span class="al-datum">27 november 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211123_KrachtigGebed/" target="_blank">Krachtig Gebed</a> <span class="al-datum">23 november 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211106_HetSprookjeVanVerdrietEnHetOudeVrouwtje/" target="_blank">Het Sprookje van Verdriet en het Oude Vrouwtje</a> <span class="al-datum">6 november 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211030_Wolken/" target="_blank">Wolken</a> <span class="al-datum">30 oktober 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211016_HeSeesMigrantsAsModernSlaves/" target="_blank">He Sees Migrants as &lsquo;Modern Slaves&rsquo;</a> <span class="al-datum">16 oktober 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211009_Lourdes2021/" target="_blank">Lourdes 2021</a> <span class="al-datum">9 oktober 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20211002_NuDeHerfstZichKenbaarMaakt/" target="_blank">Nu de herfst zich kenbaar maakt</a> <span class="al-datum">2 oktober 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210904_Startbezinning/" target="_blank">Startbezinning</a> <span class="al-datum">4 september 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210711_VredeswensZoMetenWijHetLeven/" target="_blank">Vredeswens: zo meten wij het leven</a> <span class="al-datum">11 juli 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210602_PraatMetOnsNietOverOns/" target="_blank">Praat met ons, niet over ons</a> <span class="al-datum">2 juni 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210505_DeIcoonVanDeMoederGodsVanVladimir/" target="_blank">De Icoon van de Moeder Gods van Vladimir</a> <span class="al-datum">3 mei 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210405_PaasboodschapVanDePaus/" target="_blank">Paasboodschap van Paus Franciscus</a> <span class="al-datum">4 april 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210319_OpinieResponsumInDubiumMetOpmerkingen/" target="_blank">Opinie: Responsum Ad Dubium, met opmerkingen</a> <span class="al-datum">19 maart 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210316_OverEenMeisjeZonderGezicht/" target="_blank">Over een meisje zonder gezicht</a> <span class="al-datum">16 maart 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210227_HomilieEersteZondagVanDeVeertigdagentijd/" target="_blank">Homilie eerste zondag van de Veertigdagentijd</a> <span class="al-datum">27 februari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210223_HomilieUitvaartLucVersteylen/" target="_blank">Homilie bij de uitvaart van Luc Versteylen</a> <span class="al-datum">23 februari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210202_BoodschapVanPausFranciscus/" target="_blank">De boodschap van Paus Franciscus, vol wijsheid en nederigheid</a> <span class="al-datum">2 februari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210122_DeHeuvelDieWeBeklimmen/" target="_blank">De heuvel die we beklimmen</a> <span class="al-datum">22 januari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210118_OnzeMomentenVanAlleenZijn/" target="_blank">Onze momenten van alleen zijn</a> <span class="al-datum">18 januari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210115_DeBlindenEnDeOlifant/" target="_blank">De blinden en de olifant</a> <span class="al-datum">15 januari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20210106_DeWijzen/" target="_blank">De Wijzen</a> <span class="al-datum">6 januari 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201228_LatenWeOnzeBallingschapKoesteren/" target="_blank">Laten we onze ballingschap koesteren</a> <span class="al-datum">28 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201225_DeNieuwgeboreneVanNicolasAlquin/" target="_blank">De Nieuwgeborene van Nicolas Alquin</a> <span class="al-datum">25 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201219_ZachtheidHeetOnsKind/" target="_blank">Zachtheid heet ons kind&hellip;</a> <span class="al-datum">19 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201218_DeOnVredeDesHerenZijMetU/" target="_blank">De (on)vrede des Heren zij met u&hellip;</a> <span class="al-datum">18 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201214_NietInEenTempelMaarInEenTent/" target="_blank">Niet in een tempel, maar in een tent</a> <span class="al-datum">14 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201213_OntmoetingMariaElisabet/" target="_blank">Ontmoeting &mdash; Maria en Elisabet</a> <span class="al-datum">13 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201211_DeSteenBlijftNietLiggenVoorHetGraf/" target="_blank">De steen blijft niet liggen voor het graf</a> <span class="al-datum">11 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201210_OntmoetingMariaJozef/" target="_blank">Ontmoeting &mdash; Maria en Jozef</a> <span class="al-datum">10 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201203_OpWegNaarKerstmis/" target="_blank">Op weg naar Kerstmis</a> <span class="al-datum">3 december 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201127_HommageStraatdodeChristophe/" target="_blank">Hommage straatdode: Christophe</a> <span class="al-datum">27 november 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201115_OpenBrief/" target="_blank">Een open brief: Opnieuw Kerkzijn in de huiselijke kring</a> <span class="al-datum">15 november 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200622_VanLockdownNaarWakeUp/" target="_blank">Van lockdown naar wake-up</a> <span class="al-datum">22 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200621_Nadien/" target="_blank">Nadien</a> <span class="al-datum">21 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200620_Verrijzenis/" target="_blank">Verrijzenis</a> <span class="al-datum">20 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200619_Hoop/" target="_blank">Hoop</a> <span class="al-datum">19 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200618_VoetenInBraziliaanseAarde/" target="_blank">Voeten in Braziliaanse aarde</a> <span class="al-datum">18 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200616_GoedZijn/" target="_blank">Goed zijn</a> <span class="al-datum">16 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200614_VoorAllesInHetLevenIsEenTijd/" target="_blank">Voor alles in het leven is een tijd</a> <span class="al-datum">14 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200613_EenBeterWij/" target="_blank">Een beter wij</a> <span class="al-datum">13 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200612_AmerikaanseJezuietEnZwartSchrijftIndringendEssay/" target="_blank">Amerikaanse jezu&iuml;et schrijft indringend essay</a> <span class="al-datum">12 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200609_BabelPinksterenEenGoddelijkeLesOverSamenleven/" target="_blank">Babel &mdash; Pinksteren: een goddelijke les over samenleven</a> <span class="al-datum">9 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200605_LiefdeGafUDuizendNamen/" target="_blank">Liefde Gaf U Duizend Namen</a> <span class="al-datum">5 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200601_DeScheppendeGodBlaastDeMensZijnLevensademIn/" target="_blank">De scheppende God blaast de mens zijn levensadem in</a> <span class="al-datum">1 juni 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200531_KomSchepperAdemInOnsHart/" target="_blank">Kom Schepper, adem in ons hart</a> <span class="al-datum">31 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200530_GroterDanOnsHartHuubOosterhuis/" target="_blank">Groter dan ons hart &mdash; Huub Oosterhuis</a> <span class="al-datum">30 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200529_MissionariswerkInElSalvadorRogerPonseeleGetuigt/" target="_blank">Missionariswerk in El Salvador: Roger Ponseele getuigt</a> <span class="al-datum">29 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200527_HunkerenNaarEenMisviering/" target="_blank">Hunkeren naar een misviering</a> <span class="al-datum">27 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200522_Gevangenisregime/" target="_blank">Gevangenisregime</a> <span class="al-datum">22 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200521_InMijnDiepsteBinnenste/" target="_blank">In mijn diepste binnenste</a> <span class="al-datum">21 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200520_Verbanddoos/" target="_blank">Verbanddoos</a> <span class="al-datum">20 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200519_KleineGoedheidIsGekkenwerkMaarNietsIsMeerMenselijk/" target="_blank">Kleine goedheid is gekkenwerk, maar niets is meer menselijk</a> <span class="al-datum">19 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200516_WieWarenZeEigenlijkDieBeruchteIjsheiligen/" target="_blank">Wie waren ze eigenlijk, die beruchte ijsheiligen?</a> <span class="al-datum">16 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200515_WeetJeDatNog/" target="_blank">Weet je dat nog&hellip;</a> <span class="al-datum">15 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200514_HeiligeCorona/" target="_blank">Heilige Corona</a> <span class="al-datum">14 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200513_VanBlijfInJeKotTotKeerInTotJeHart/" target="_blank">Van &lsquo;blijf in je kot&rsquo; tot &lsquo;keer in tot je hart&rsquo;</a> <span class="al-datum">13 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200511_ZonderCoronavaccinZullenWeNooitMeerNormaalKunnenLeven/" target="_blank">Zonder coronavaccin zullen we nooit meer normaal kunnen leven</a> <span class="al-datum">11 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200510_PeoplesFaces/" target="_blank">People&rsquo;s Faces</a> <span class="al-datum">10 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200509_VanKindsoldaatTotStrijderTegenCorona/" target="_blank">Van kindsoldaat tot strijder tegen corona</a> <span class="al-datum">9 mei 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200427_ChristusOntmoetZijnMoederEenParadijselijkeActualiteit/" target="_blank">Christus ontmoet zijn moeder &mdash; Een paradijselijke actualiteit</a> <span class="al-datum">27 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200426_GaandewegGingenHunOgenOpen/" target="_blank">Gaandeweg gingen hun ogen open</a> <span class="al-datum">26 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200425_StormOpHetMeer/" target="_blank">Storm op het meer</a> <span class="al-datum">25 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200424_NaarBinnen/" target="_blank">Naar binnen!</a> <span class="al-datum">24 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200423_ReddendeEngelenInDeTijdVanHetCoronavirus/" target="_blank">Reddende engelen in de tijd van het coronavirus</a> <span class="al-datum">23 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200420_OrthodoxeChristenenVierenVandaagPasen/" target="_blank">Orthodoxe christenen vieren vandaag Pasen</a> <span class="al-datum">20 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200418_DeCoronacrisisIsHetMomentVoorDeKerkOmTeVeranderen/" target="_blank">De coronacrisis is h&eacute;t moment voor de kerk om te veranderen</a> <span class="al-datum">18 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200415_WieKanVoorOnsDeSteenVanHetGrafWegrollen/" target="_blank">Wie kan voor ons de steen van het graf wegrollen?</a> <span class="al-datum">15 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200413_PaasboodschapVanPausFranciscus/" target="_blank">Paasboodschap van paus Franciscus</a> <span class="al-datum">13 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200412_DoorGodGegrepenDeStilteVanPasen/" target="_blank">Door God gegrepen &mdash; De stilte van Pasen</a> <span class="al-datum">12 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200411_BruggenBouwenOpWegNaarPasen/" target="_blank">Bruggen bouwen op weg naar Pasen</a> <span class="al-datum">11 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200410_StaandeBlijvenInMachteloosheid/" target="_blank">Staande blijven in machteloosheid</a> <span class="al-datum">10 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200406_LePointNoir/" target="_blank">Le point noir</a> <span class="al-datum">6 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200404_TroostwoordVoorDePandemie/" target="_blank">Troostwoord voor de pandemie</a> <span class="al-datum">4 april 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200328_CoronacrisisToontDatHetGoedeWoordMachtigerIsDanHetBoze/" target="_blank">Coronacrisis toont dat het goede woord machtiger is dan het boze</a> <span class="al-datum">28 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200327_GebedenOmTroost/" target="_blank">Gebeden om troost</a> <span class="al-datum">27 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200326_WachtenWijOpDeBesmettingOfOpDeVerlossing/" target="_blank">Wachten wij op de besmetting of op de verlossing?</a> <span class="al-datum">26 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200325_GoedeBijstandskerkBrussel/" target="_blank">Goede Bijstandskerk Brussel</a> <span class="al-datum">25 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200324_GebedOmInzichtEnMoed/" target="_blank">Gebed om inzicht en moed</a> <span class="al-datum">24 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200322_Lockdown/" target="_blank">Lockdown</a> <span class="al-datum">22 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200320_MaarDeLenteWistHetNiet/" target="_blank">Maar de lente wist het niet</a> <span class="al-datum">20 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/LeMessageDuChanteurRwandaisKizitoMihigoDoitEtreEntendu/" target="_blank">Le message du chanteur rwandais Kizito Mihigo</a> <span class="al-datum">4 maart 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/Allerheiligen2019/" target="_blank">Allerheiligen</a> <span class="al-datum">1 november 2019</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/DeGebarstenKlok/" target="_blank">De gebarsten klok</a> <span class="al-datum">8 februari 2018</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/GeenPlaatsVoorGeloofInOnzeMedia/" target="_blank">Geen plaats voor geloof in onze media</a> <span class="al-datum">10 december 2017</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/EersteLezing20140727/" target="_blank">Eerste lezing: Kerkwijding</a> <span class="al-datum">27 juli 2014</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/GeloofsbelijdenisVanPausFranciscus/" target="_blank">Geloofsbelijdenis van Paus Franciscus</a> <span class="al-datum">2013</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/Woorddienst20121209/" target="_blank">Bezinning bij de Woorddienst</a> <span class="al-datum">9 december 2012</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/MarceloBarrosWasInBelgie/" target="_blank">Marcelo Barros was in Belgi&euml;</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/GetuigenisVanFrancoise/" target="_blank">Getuigenis van Fran&ccedil;oise</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/AlsDeLenteUitblijft/" target="_blank">Als de lente uitblijft</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/EenAnderProfiel/" target="_blank">Een ander profiel</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/Bezinning/" target="_blank">Bezinning</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/AlleHeiligen/" target="_blank">Alle Heiligen</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/ZijnErRechtvaardigeZiekten/" target="_blank">Zijn er rechtvaardige ziekten?</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/TrouwAanOnzeRoeping/" target="_blank">Trouw aan onze roeping</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/LHommeQuiPleureDeMensWeent/" target="_blank">L&rsquo;homme qui pleure&hellip; De mens weent&hellip;</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/40JaarVlaamsePastoraal/" target="_blank">40 jaar Vlaamse pastoraal</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/ChristelijkeSpiritualiteitEnUniverseleSolidariteit/" target="_blank">Christelijke spiritualiteit en universele solidariteit</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/GeboorteZevenImpressies/" target="_blank">Geboorte &mdash; zeven impressies</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/JongerenLerenVanWatMenHunVoorleeft/" target="_blank">Jongeren leren van wat men hun voorleeft</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/HetZonneliedVanFranciscus/" target="_blank">Het zonnelied van Franciscus</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/PleidooiVoorVerdriet/" target="_blank">Pleidooi voor &lsquo;Verdriet&rsquo;</a></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/LeefJeLevenAlsEenSchilderijtje/" target="_blank">Leef je leven als een schilderijtje</a></li>
+        </ul>
+      </div>
+
+      <!-- ── FOTO'S VIERINGEN ── -->
+      <div id="vsub-fotos" class="vsub" style="display:none;">
+        <p style="font-style:italic;color:var(--muted);margin-bottom:1rem;">Foto&rsquo;s van vieringen in de Kerk van Goede Bijstand.</p>
+        <ul class="archief-lijst">
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/20241102_Viering/" target="_blank">Viering Allerzielen</a> <span class="al-datum">2 november 2024</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/20231015_Viering/" target="_blank">Gedachtenisviering</a> <span class="al-datum">15 oktober 2023</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/20221120_DoopLineOlivia/" target="_blank">Doop Line en Olivia</a> <span class="al-datum">20 november 2022</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/20211219_Viering/" target="_blank">Viering</a> <span class="al-datum">19 december 2021</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/20200118_DoopBeatrice/" target="_blank">Doop B&eacute;atrice</a> <span class="al-datum">18 januari 2020</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/20130203_Lichtmis/" target="_blank">Lichtmis</a> <span class="al-datum">3 februari 2013</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Fotos/Vieringen/" target="_blank">Vieringen (archief)</a></li>
+        </ul>
+      </div>
+
+    </section>` },
+
+  activiteiten: { title:'Activiteiten', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Activiteiten</div>
+      <h2>Activiteiten &amp; Evenementen</h2>
+      <div class="act-subnav">
+        <a onclick="showActSub('overzicht')" data-asub="overzicht" class="act-actief">Overzicht</a>
+        <a onclick="showActSub('fotos')"     data-asub="fotos">&#128247; Foto&#8217;s</a>
+      </div>
+      <div id="asub-overzicht">
+        <h3>Kerstbrief 2025 &mdash; De Kleine Zusters van Jezus</h3>
         <p>De Kleine Zusters van Jezus stuurden ook dit jaar een hartelijke Kerstbrief. Ze leven en werken te midden van de armen en gemarginaliseerden, in de geest van Charles de Foucauld.</p>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
         <h3>Gebed in de geest van Taiz&#233;</h3>
-        <p><em>Elke derde zaterdag van de maand, 20.00&nbsp;u &#8212; Kerk van Goede Bijstand</em></p>
+        <p><em>Elke derde zaterdag van de maand, 20.00&nbsp;u &mdash; Kerk van Goede Bijstand</em></p>
         <p>Een moment van gebed, stilte en gezang. Iedereen is welkom. <a onclick="navigate('home')">Bekijk alle datums &#8594;</a></p>
         <img src="${INT}" alt="Kerkinterieur" class="church-photo" style="height:200px;">
-        <p class="photo-caption">De kerk &#8217;s avonds &#8212; een plek voor rust en ontmoeting &#169; Jean-Paul Remy / visit.brussels</p>
+        <p class="photo-caption">De kerk &#8217;s avonds &mdash; een plek voor rust en ontmoeting &#169; Jean-Paul Remy / visit.brussels</p>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
         <h3>Bijstand by Night</h3>
-        <p><em>Elke vrijdagavond van mei t.e.m. augustus, 18&#8211;22&nbsp;uur</em></p>
-        <p>De kerk staat open voor iedereen die wil binnenstappen &#8212; voor stilte, ontmoeting of gewoon even uitblazen. Contacteer <a href="mailto:eheesen@hotmail.com">Nieneke</a> of <a href="mailto:danny.decock59@yahoo.com">Danny</a> voor meer info.</p>
+        <p><em>Elke vrijdagavond van mei t.e.m. augustus, 18&ndash;22&nbsp;uur</em></p>
+        <p>De kerk staat open voor iedereen die wil binnenstappen &mdash; voor stilte, ontmoeting of gewoon even uitblazen. Contacteer <a href="mailto:eheesen@hotmail.com">Nieneke</a> of <a href="mailto:danny.decock59@yahoo.com">Danny</a> voor meer info.</p>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
         <h3>Biechtgesprek, Ziekenzalving, Begrafenis</h3>
         <p>Gelieve contact op te nemen met pastoor Johnny De Mot via <a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a>.</p>
-      </section>`
-  },
+      </div>
+      <div id="asub-fotos" style="display:none;">
+        <p style="font-style:italic;color:var(--muted);margin-bottom:1.4rem;">Beeldverslag van de verschillende activiteiten in onze parochie &mdash; van liturgische vieringen tot sociale ontmoetingen en culturele evenementen.</p>
+        ${fotoBlok('vieringen','Vieringen &amp; Liturgie','Momenten van gebed, eredienst en sacramenten doorheen het kerkelijk jaar.','&#127775;','vieringen')}
+        ${fotoBlok('sociaal','Sociale Activiteiten','Ontmoetingen, maaltijden en samenzijn die de gemeenschap verbinden.','&#129309;','sociaal')}
+        ${fotoBlok('jeugd','Kinderen &amp; Jongeren','Catechese, spelactiviteiten en jeugdvieringen voor de jongste parochianen.','&#11088;','jeugd')}
+        ${fotoBlok('cultuur','Culturele Evenementen','Concerten, tentoonstellingen en culturele initiatieven in en rond de kerk.','&#127925;','cultuur')}
+        ${fotoBlok('samen','Samenwerking &amp; Solidariteit','Acties en projecten waarbij we samenwerken met andere organisaties en parochies.','&#10013;','samenwerking')}
+      </div>
+    </section>` },
 
-  // ── KINDEREN & JONGEREN ───────────────────────────────────────
-  kinderen: {
-    title: 'Kinderen & Jongeren',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Kinderen &amp; Jongeren</div>
-        <h2>Kinderen &amp; Jongeren</h2>
-        <p>Elke derde zondag van de maand is er kindernevendienst tijdens de viering van 11 uur. De kinderen gaan apart aan de slag terwijl de volwassenen de eucharistie vieren.</p>
-        <div class="kids-grid">
-          <div class="kids-card" onclick="navigate('bijtjes')">
-            <div class="icon">&#x1F41D;</div>
-            <h3>Goede Bijtjes</h3>
-            <p>Voor kinderen van de lagere school. Ze verkennen het geloof via verhalen, knutselen en gesprekken.</p>
-            <p><a>Meer info &#8594;</a></p>
-          </div>
-          <div class="kids-card" onclick="navigate('mosterdzaadjes')">
-            <div class="icon">&#x1F331;</div>
-            <h3>Mosterdzaadjes</h3>
-            <p>Voor peuters en kleuters. Een zachte introductie tot geloof en gemeenschap.</p>
-            <p><a>Meer info &#8594;</a></p>
-          </div>
-        </div>
-        <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        <h3>Jongeren</h3>
-        <p>Via onze samenwerking met <strong>Kamino</strong> &#8212; het jongerennetwerk van de Brusselse katholieke kerk &#8212; zijn er regelmatig activiteiten. <a onclick="navigate('samenwerking')">Meer over Kamino &#8594;</a></p>
-      </section>`
-  },
+  kinderen: { title:'Kinderen & Jongeren', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Kinderen &amp; Jongeren</div>
+      <h2>Kinderen &amp; Jongeren</h2>
+      <p>Elke derde zondag van de maand is er kindernevendienst tijdens de viering van 11 uur. De kinderen gaan apart aan de slag terwijl de volwassenen de eucharistie vieren.</p>
+      <div class="kids-grid">
+        <div class="kids-card" onclick="navigate('bijtjes')"><div class="icon">&#x1F41D;</div><h3>Goede Bijtjes</h3><p>Voor kinderen van de lagere school. Ze verkennen het geloof via verhalen, knutselen en gesprekken.</p><p><a>Meer info &#8594;</a></p></div>
+        <div class="kids-card" onclick="navigate('mosterdzaadjes')"><div class="icon">&#x1F331;</div><h3>Mosterdzaadjes</h3><p>Voor peuters en kleuters. Een zachte introductie tot geloof en gemeenschap.</p><p><a>Meer info &#8594;</a></p></div>
+      </div>
+      <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
+      <h3>Jongeren</h3>
+      <p>Via onze samenwerking met <strong>Kamino</strong> &mdash; het jongerennetwerk van de Brusselse katholieke kerk &mdash; zijn er regelmatig activiteiten. <a onclick="navigate('samenwerking')">Meer over Kamino &#8594;</a></p>
+    </section>` },
 
-  // ── GOEDE BIJTJES ─────────────────────────────────────────────
-  bijtjes: {
-    title: 'Goede Bijtjes',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Goede Bijtjes</div>
-        <h2>&#x1F41D; Goede Bijtjes</h2>
-        <p>De Goede Bijtjes is de kindernevendienst voor kinderen van de lagere school. Elke derde zondag van de maand gaan ze apart aan de slag tijdens de viering van 11&nbsp;uur.</p>
-        <h3>Wat doen we?</h3>
-        <p>Via bijbelverhalen, knutselen, spelletjes en gesprekjes ontdekken de kinderen wat geloof betekent. Er is altijd ruimte voor vragen en verwondering.</p>
-        <h3>Wanneer?</h3>
-        <p>Elke <strong>derde zondag van de maand</strong> tijdens de viering van 11&nbsp;uur in de Kerk van Goede Bijstand.</p>
-        <p><a onclick="navigate('contact')">Neem contact op voor meer info &#8594;</a></p>
-      </section>`
-  },
+  bijtjes: { title:'Goede Bijtjes', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Goede Bijtjes</div>
+      <h2>&#x1F41D; Goede Bijtjes</h2>
+      <p>De Goede Bijtjes is de kindernevendienst voor kinderen van de lagere school. Elke derde zondag van de maand gaan ze apart aan de slag tijdens de viering van 11&nbsp;uur.</p>
+      <h3>Wat doen we?</h3>
+      <p>Via bijbelverhalen, knutselen, spelletjes en gesprekjes ontdekken de kinderen wat geloof betekent. Er is altijd ruimte voor vragen en verwondering.</p>
+      <h3>Wanneer?</h3>
+      <p>Elke <strong>derde zondag van de maand</strong> tijdens de viering van 11&nbsp;uur in de Kerk van Goede Bijstand.</p>
+      <p><a onclick="navigate('contact')">Neem contact op voor meer info &#8594;</a></p>
+    </section>` },
 
-  // ── MOSTERDZAADJES ────────────────────────────────────────────
-  mosterdzaadjes: {
-    title: 'Mosterdzaadjes',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Mosterdzaadjes</div>
-        <h2>&#x1F331; Mosterdzaadjes</h2>
-        <p>Mosterdzaadjes is de kindernevendienst voor de allerkleinsten &#8212; peuters en kleuters. Net als het mosterdzaadje: klein van begin, maar vol leven.</p>
-        <h3>Wat doen we?</h3>
-        <p>In een veilige, rustige omgeving worden de kleintjes op een speelse manier vertrouwd gemaakt met geloof, gemeenschap en verhalen.</p>
-        <h3>Wanneer?</h3>
-        <p>Elke <strong>derde zondag van de maand</strong> tijdens de viering van 11&nbsp;uur.</p>
-        <p><a onclick="navigate('contact')">Neem contact op voor meer info &#8594;</a></p>
-      </section>`
-  },
+  mosterdzaadjes: { title:'Mosterdzaadjes', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Mosterdzaadjes</div>
+      <h2>&#x1F331; Mosterdzaadjes</h2>
+      <p>Mosterdzaadjes is de kindernevendienst voor de allerkleinsten &mdash; peuters en kleuters. Net als het mosterdzaadje: klein van begin, maar vol leven.</p>
+      <h3>Wat doen we?</h3>
+      <p>In een veilige, rustige omgeving worden de kleintjes op een speelse manier vertrouwd gemaakt met geloof, gemeenschap en verhalen.</p>
+      <h3>Wanneer?</h3>
+      <p>Elke <strong>derde zondag van de maand</strong> tijdens de viering van 11&nbsp;uur.</p>
+      <p><a onclick="navigate('contact')">Neem contact op voor meer info &#8594;</a></p>
+    </section>` },
 
-  // ── SAMENWERKING ──────────────────────────────────────────────
-  samenwerking: {
-    title: 'Samenwerking',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Samenwerking</div>
-        <h2>Samenwerking</h2>
-        <p>De Kerk van Goede Bijstand werkt samen met verschillende organisaties die de Brusselse geloofsgemeenschap versterken.</p>
-        <div class="partners">
-          <div class="partner-item" id="KaminoJongerennetwerk">
-            <strong>Kamino &#8211; Jongerennetwerk</strong>
-            <p>Kamino is het jongerennetwerk van de katholieke kerk in Brussel. Het brengt jongeren samen rondom geloof, zingeving en engagement in de stad. <a href="https://www.kamino.be" target="_blank">www.kamino.be &#8594;</a></p>
-          </div>
-          <div class="partner-item">
-            <strong>Bijstandsnetwerk Brussel</strong>
-            <p>Het Bijstandsnetwerk co&#246;rdineert de Nederlandstalige pastoraal in Brussel centrum. Secretariaat: Bijstandsstraat 5, 1000 Brussel.</p>
-          </div>
-          <div class="partner-item">
-            <strong>Finis Terrae</strong>
-            <p>Zustergemeenschap aan de Nieuwstraat 76. Elke zaterdag om 16.30&nbsp;uur viering.</p>
-          </div>
-          <div class="partner-item">
-            <strong>Taiz&#233;</strong>
-            <p>Maandelijks een gebedsavond in de geest van Taiz&#233;, open voor iedereen. <a onclick="navigate('home')">Meer info &#8594;</a></p>
-          </div>
-        </div>
-      </section>`
-  },
+  samenwerking: { title:'Samenwerking', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Samenwerking</div>
+      <h2>Samenwerking</h2>
+      <p>De Kerk van Goede Bijstand werkt samen met verschillende organisaties die de Brusselse geloofsgemeenschap versterken.</p>
+      <div class="partners">
+        <div class="partner-item"><strong>Kamino &ndash; Jongerennetwerk</strong><p>Kamino is het jongerennetwerk van de katholieke kerk in Brussel. Het brengt jongeren samen rondom geloof, zingeving en engagement in de stad. <a href="https://www.kamino.be" target="_blank">www.kamino.be &#8594;</a></p></div>
+        <div class="partner-item"><strong>Bijstandsnetwerk Brussel</strong><p>Het Bijstandsnetwerk co&#246;rdineert de Nederlandstalige pastoraal in Brussel centrum. Secretariaat: Bijstandsstraat 5, 1000 Brussel.</p></div>
+        <div class="partner-item"><strong>Finis Terrae</strong><p>Zustergemeenschap aan de Nieuwstraat 76. Elke zaterdag om 16.30&nbsp;uur viering.</p></div>
+        <div class="partner-item"><strong>Taiz&#233;</strong><p>Maandelijks een gebedsavond in de geest van Taiz&#233;, open voor iedereen. <a onclick="navigate('home')">Meer info &#8594;</a></p></div>
+        <div class="partner-item"><strong>Paulusgemeenschappen</strong><p>Netwerk van geloofsgemeenschappen in Vlaanderen en Brussel, ge&#239;nspireerd door de apostel Paulus. <a href="https://www.paulusgemeenschappen.be/nl" target="_blank">www.paulusgemeenschappen.be &#8594;</a></p></div>
+      </div>
+    </section>` },
 
-  // ── OVERLIJDEN ────────────────────────────────────────────────
-  overlijden: {
-    title: 'Overlijden',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Overlijden</div>
-        <h2>Overlijden</h2>
-        <div class="news-item" style="cursor:default;pointer-events:none;">
-          <div class="tag">Overlijden</div>
-          <div class="ni-title" style="font-size:1.15rem;margin-bottom:0.5rem;">Paul Huyskens</div>
-          <p style="font-size:0.95rem;color:var(--muted);">Het is met droefheid dat we het overlijden meedelen van Paul Huyskens, een trouw lid van onze parochiegemeenschap. We bidden voor hem en voor zijn familie en naasten.</p>
-          <p style="font-size:0.9rem;color:var(--muted);font-style:italic;">Moge hij rusten in vrede. &#x271D;</p>
-        </div>
-        <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        <h3>Begrafenissen</h3>
-        <p>Voor het organiseren van een begrafenisviering, gelieve contact op te nemen met pastoor Johnny De Mot.</p>
-        <p><a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a> &nbsp;|&nbsp; <a onclick="navigate('contact')">Contactformulier &#8594;</a></p>
-      </section>`
-  },
+  overlijden: { title:'Overlijden', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Overlijden</div>
+      <h2>Overlijden</h2>
+      <div class="news-item" style="cursor:default;pointer-events:none;">
+        <div class="tag">Overlijden</div>
+        <div class="ni-title" style="font-size:1.15rem;margin-bottom:0.5rem;">Paul Huyskens</div>
+        <p style="font-size:0.95rem;color:var(--muted);">Het is met droefheid dat we het overlijden meedelen van Paul Huyskens, een trouw lid van onze parochiegemeenschap. We bidden voor hem en voor zijn familie en naasten.</p>
+        <p style="font-size:0.9rem;color:var(--muted);font-style:italic;">Moge hij rusten in vrede. &#x271D;</p>
+      </div>
+      <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
+      <h3>Begrafenissen</h3>
+      <p>Voor het organiseren van een begrafenisviering, gelieve contact op te nemen met pastoor Johnny De Mot.</p>
+      <p><a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a> &nbsp;|&nbsp; <a onclick="navigate('contact')">Contactformulier &#8594;</a></p>
+    </section>` },
 
-  // ── CONTACT ───────────────────────────────────────────────────
-  contact: {
-    title: 'Contact',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Contact</div>
-        <h2>Contact</h2>
-        <h3>Secretariaat</h3>
-        <p>Bijstandsstraat 5, 1000 Brussel</p>
-        <h3>Pastoor</h3>
-        <p><strong>Johnny De Mot</strong> &#8212; Pastoor Goede Bijstand<br>
-        <a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a></p>
-        <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        <h3>Stuur ons een bericht</h3>
-        <div class="contact-form">
-          <div><label>Uw naam</label><input type="text" placeholder="Voor- en achternaam"></div>
-          <div><label>E-mailadres</label><input type="email" placeholder="uw@email.be"></div>
-          <div><label>Onderwerp</label><input type="text" placeholder="Waar gaat uw vraag over?"></div>
-          <div><label>Bericht</label><textarea placeholder="Schrijf hier uw bericht..."></textarea></div>
-          <div><button class="btn" onclick="alert('Uw bericht is verstuurd. Dank u!')">Verstuur bericht</button></div>
-        </div>
-        <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        <h3>Locatie</h3>
-        <div class="map-box">
-          &#128205; Kerk van Goede Bijstand &#8212; Kolenmarkt 91, 1000 Brussel<br><br>
-          <a href="https://maps.google.com/?q=Kolenmarkt+91,+1000+Brussel" target="_blank">Bekijk op Google Maps &#8594;</a>
-        </div>
-      </section>`
-  },
+  contact: { title:'Contact', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Contact</div>
+      <h2>Contact</h2>
+      <h3>Secretariaat</h3><p>Bijstandsstraat 5, 1000 Brussel</p>
+      <h3>Pastoor</h3><p><strong>Johnny De Mot</strong> &mdash; Pastoor Goede Bijstand<br><a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a></p>
+      <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
+      <h3>Stuur ons een bericht</h3>
+      <div class="contact-form">
+        <div><label>Uw naam</label><input type="text" placeholder="Voor- en achternaam"></div>
+        <div><label>E-mailadres</label><input type="email" placeholder="uw@email.be"></div>
+        <div><label>Onderwerp</label><input type="text" placeholder="Waar gaat uw vraag over?"></div>
+        <div><label>Bericht</label><textarea placeholder="Schrijf hier uw bericht..."></textarea></div>
+        <div><button class="btn" onclick="alert('Uw bericht is verstuurd. Dank u!')">Verstuur bericht</button></div>
+      </div>
+      <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
+      <h3>Locatie</h3>
+      <div class="map-box">&#128205; Kerk van Goede Bijstand &mdash; Kolenmarkt 91, 1000 Brussel<br><br><a href="https://maps.google.com/?q=Kolenmarkt+91,+1000+Brussel" target="_blank">Bekijk op Google Maps &#8594;</a></div>
+    </section>` },
 
-  // ── HOMILIE ───────────────────────────────────────────────────
-  homilie: {
-    title: 'Homilie — Kerstmis 2025',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('vieringen')">Vieringen</a> <span>&#8250;</span> Homilies</div>
-        <h2>Kerstmis: moet ik zwijgen?</h2>
-        <p><em>Kerstmis, 25 december 2025 &#8212; Pastoor Johnny De Mot</em></p>
-        <div class="homilie">
-          <p>&#8220;Moet ik zwijgen?&#8221; &#8212; Dat is de vraag die me bezighoudt deze Kerstmis. We leven in een wereld vol lawaai, vol meningen, vol stellige uitspraken. En toch is het Kind in de kribbe stil. Het spreekt niet. Het is er gewoon.</p>
-          <p>Kerstmis nodigt ons uit om even te stoppen. Om niet meteen te duiden, te verklaren, te verdedigen. Om aanwezig te zijn, zoals de herders, zoals de Wijzen &#8212; verward, maar in beweging. Op weg naar iets waarvan ze de naam nauwelijks kennen.</p>
-          <p>Misschien is het meest eerlijke wat we kunnen doen vandaag: zwijgen. En luisteren. Naar het Kind. Naar elkaar. Naar wat er leeft in onze eigen ziel, diep onder de drukte van de feestdagen.</p>
-          <p>Want ook in ons is er een plek die stil wil zijn. Die wacht. Die hoopt. Die gelooft &#8212; soms nauwelijks, maar toch.</p>
-          <p>Gelukkig Kerstfeest. &#x271D;</p>
-        </div>
-        <p style="margin-top:1.5rem;"><a onclick="navigate('vieringen')">&#8592; Terug naar vieringen</a></p>
-      </section>`
-  },
+  homilie: { title:'Homilie — Kerstmis 2025', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('vieringen')">Vieringen</a> <span>&#8250;</span> Homilies</div>
+      <h2>Kerstmis: moet ik zwijgen?</h2>
+      <p><em>Kerstmis, 25 december 2025 &mdash; Pastoor Johnny De Mot</em></p>
+      <div class="homilie">
+        <p>&#8220;Moet ik zwijgen?&#8221; &mdash; Dat is de vraag die me bezighoudt deze Kerstmis. We leven in een wereld vol lawaai, vol meningen, vol stellige uitspraken. En toch is het Kind in de kribbe stil. Het spreekt niet. Het is er gewoon.</p>
+        <p>Kerstmis nodigt ons uit om even te stoppen. Om niet meteen te duiden, te verklaren, te verdedigen. Om aanwezig te zijn, zoals de herders, zoals de Wijzen &mdash; verward, maar in beweging. Op weg naar iets waarvan ze de naam nauwelijks kennen.</p>
+        <p>Misschien is het meest eerlijke wat we kunnen doen vandaag: zwijgen. En luisteren. Naar het Kind. Naar elkaar. Naar wat er leeft in onze eigen ziel, diep onder de drukte van de feestdagen.</p>
+        <p>Want ook in ons is er een plek die stil wil zijn. Die wacht. Die hoopt. Die gelooft &mdash; soms nauwelijks, maar toch.</p>
+        <p>Gelukkig Kerstfeest. &#x271D;</p>
+      </div>
+      <p style="margin-top:1.5rem;"><a onclick="navigate('vieringen')">&#8592; Terug naar vieringen</a></p>
+    </section>` },
 
-  // ── BEZINNING ─────────────────────────────────────────────────
-  bezinning: {
-    title: 'Koud Gepakt, Warm Gedragen',
-    content: `
-      <section>
-        <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('vieringen')">Vieringen</a> <span>&#8250;</span> Bezinningsteksten</div>
-        <h2>Koud Gepakt, Warm Gedragen</h2>
-        <p><em>Bezinningstekst &#8212; 21 september 2025</em></p>
-        <div class="homilie">
-          <p>De herfst valt vroeg dit jaar. De morgens zijn al grijs wanneer we de deur opendoen. En toch: er is iets dat ons warm houdt. Niet de verwarming, niet de koffie &#8212; maar de mensen om ons heen.</p>
-          <p>&#8220;Koud gepakt, warm gedragen.&#8221; Zo voelt het aan wanneer het leven je verrast met verlies, met moeilijkheid. En dan is er iemand die er is. Die zwijgt of spreekt, maar aanwezig is.</p>
-          <p>In de Bijbel heet dat: troost. Niet als sentimenteel gebaar, maar als echte nabijheid van God &#8212; doorheen mensen, doorheen stilte, doorheen brood en wijn gedeeld aan een tafel.</p>
-          <p>Moge u deze herfst gedragen worden &#8212; koud gepakt als het moet, maar nooit alleen.</p>
-        </div>
-        <p style="margin-top:1.5rem;"><a onclick="navigate('vieringen')">&#8592; Terug naar vieringen</a></p>
-      </section>`
-  }
+  bezinning: { title:'Koud Gepakt, Warm Gedragen', content:`
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('vieringen')">Vieringen</a> <span>&#8250;</span> Bezinningsteksten</div>
+      <h2>Koud Gepakt, Warm Gedragen</h2>
+      <p><em>Bezinningstekst &mdash; 21 september 2025</em></p>
+      <div class="homilie">
+        <p>De herfst valt vroeg dit jaar. De morgens zijn al grijs wanneer we de deur opendoen. En toch: er is iets dat ons warm houdt. Niet de verwarming, niet de koffie &mdash; maar de mensen om ons heen.</p>
+        <p>&#8220;Koud gepakt, warm gedragen.&#8221; Zo voelt het aan wanneer het leven je verrast met verlies, met moeilijkheid. En dan is er iemand die er is. Die zwijgt of spreekt, maar aanwezig is.</p>
+        <p>In de Bijbel heet dat: troost. Niet als sentimenteel gebaar, maar als echte nabijheid van God &mdash; doorheen mensen, doorheen stilte, doorheen brood en wijn gedeeld aan een tafel.</p>
+        <p>Moge u deze herfst gedragen worden &mdash; koud gepakt als het moet, maar nooit alleen.</p>
+      </div>
+      <p style="margin-top:1.5rem;"><a onclick="navigate('vieringen')">&#8592; Terug naar vieringen</a></p>
+    </section>` }
 };
 
-// ═══════════════════════════════════════════════════════════════
-// SUBNAV WISSELEN (tabbladen binnen De Goede Bijstand)
-// ═══════════════════════════════════════════════════════════════
-function showSub(subKey) {
-  document.querySelectorAll('.subpage').forEach(el => el.style.display = 'none');
-  const target = document.getElementById('sub-' + subKey);
-  if (target) target.style.display = 'block';
-  document.querySelectorAll('.subnav a').forEach(a => {
-    a.classList.toggle('subnav-active', a.dataset.sub === subKey);
-  });
+// ── Subnav Vieringen
+function showVierSub(k) {
+  document.querySelectorAll('.vsub').forEach(el => el.style.display='none');
+  const t = document.getElementById('vsub-'+k); if(t) t.style.display='block';
+  document.querySelectorAll('[data-vsub]').forEach(a => a.classList.toggle('subnav-active', a.dataset.vsub===k));
 }
 
-// ═══════════════════════════════════════════════════════════════
-// PAGINANAVIGATIE
-// ═══════════════════════════════════════════════════════════════
+// ── Subnav De Goede Bijstand
+function showSub(k) {
+  document.querySelectorAll('.subpage').forEach(el => el.style.display='none');
+  const t = document.getElementById('sub-'+k); if(t) t.style.display='block';
+  document.querySelectorAll('.subnav a').forEach(a => a.classList.toggle('subnav-active', a.dataset.sub===k));
+}
+
+// ── Subnav Activiteiten
+function showActSub(k) {
+  ['overzicht','fotos'].forEach(id => {
+    const el = document.getElementById('asub-'+id);
+    if(el) el.style.display = (id===k) ? 'block' : 'none';
+  });
+  document.querySelectorAll('[data-asub]').forEach(a => a.classList.toggle('act-actief', a.dataset.asub===k));
+}
+
+// ── Navigatie
 function navigate(pageKey) {
-  const page = pages[pageKey];
-  if (!page) return;
+  const page = pages[pageKey]; if(!page) return;
   document.getElementById('main-content').innerHTML = page.content;
   document.getElementById('sidebar').innerHTML = getSidebar();
   document.title = page.title + ' \u2014 Onze-Lieve-Vrouw van Goede Bijstand';
-  document.querySelectorAll('nav a').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === pageKey);
-  });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('nav a').forEach(a => a.classList.toggle('active', a.dataset.page===pageKey));
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// Start op home
 navigate('home');
 </script>
 </body>
