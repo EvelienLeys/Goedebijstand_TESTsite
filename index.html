@@ -320,8 +320,6 @@ const EVICON  = { viering:"✝", activiteit:"◆", muziek:"♫", taize:"✦" };
 const VASTE_DATUMS = [
   { datum:"2026-04-04", tijd:"21:00", type:"viering", tekst:"Paaswake — Goede Bijstand" },
   { datum:"2026-04-05", tijd:"11:00", type:"viering", tekst:"Pasen — Goede Bijstand" },
-  { datum:"2026-04-11", tijd:"16:30", type:"viering", tekst:"Mis — Finis Terrae" },
-  { datum:"2026-04-12", tijd:"16:30", type:"viering", tekst:"Mis — Finis Terrae" },
 ];
 
 // ── Taizé: derde zaterdag van de maand genereren (voor de komende 12 maanden) ──
@@ -395,9 +393,15 @@ function agendaHTML() {
     // Extra events voor deze dag
     const extra = alleEvents[s] || [];
 
-    // Verwijder duplicaten (vaste zondagsviering niet dubbel tonen als ook in extra staat)
-    const evs = [...vast, ...extra];
-    if (!evs.length) continue;
+   
+// Verwijder duplicaten op basis van combinatie tijd + tekst
+const gezien = new Set();
+const evs = [...vast, ...extra].filter(ev => {
+  const sleutel = (ev.tijd||'') + '|' + ev.tekst;
+  if (gezien.has(sleutel)) return false;
+  gezien.add(sleutel);
+  return true;
+});
 
     rijen++;
     if (mn !== hm) {
