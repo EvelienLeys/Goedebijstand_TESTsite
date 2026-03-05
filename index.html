@@ -24,7 +24,6 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'EB Garamond', Georgia, serif; background: var(--sky); color: var(--text); font-size: 18px; line-height: 1.75; }
 
-  /* ── HEADER ── */
   header { background: linear-gradient(160deg, var(--blue-navy) 0%, var(--blue-deep) 60%, var(--blue-mid) 100%); color: #fff; text-align: center; padding: 0; border-bottom: 4px solid var(--gold); cursor: pointer; position: relative; overflow: hidden; }
   .hero-photo { width: 100%; height: 320px; object-fit: cover; object-position: center 40%; display: block; opacity: 0.45; }
   .hero-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; }
@@ -32,20 +31,17 @@
   header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.6); letter-spacing: 0.04em; }
   header p.subtitle { font-style: italic; color: var(--gold-lt); font-size: 1.1rem; margin-top: 0.4rem; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
 
-  /* ── NAV ── */
   nav { background: var(--blue-deep); display: flex; flex-wrap: wrap; justify-content: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(10,30,60,0.3); }
   nav a { color: #cfe2f5; text-decoration: none; padding: 0.7rem 1.2rem; font-family: 'EB Garamond', serif; font-size: 0.92rem; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s, color 0.2s; border-right: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
   nav a:last-child { border-right: none; }
   nav a:hover, nav a.active { background: var(--gold); color: var(--blue-navy); font-weight: 600; }
 
-  /* ── LAYOUT ── */
   .container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 310px; gap: 2.5rem; }
   @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
   main > section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); animation: fadeIn 0.35s ease; }
   main > section:last-child { border-bottom: none; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ── TYPOGRAPHY ── */
   h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--blue-deep); font-weight: 600; margin-bottom: 0.9rem; padding-bottom: 0.45rem; border-bottom: 2px solid var(--gold); display: inline-block; }
   h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--blue-mid); font-style: italic; margin: 1.1rem 0 0.35rem; }
   p { margin-bottom: 0.75rem; }
@@ -53,14 +49,12 @@
   a:hover { color: var(--gold); }
   .ornament { text-align: center; color: var(--gold); font-size: 1.2rem; letter-spacing: 6px; margin: 1.5rem 0; }
 
-  /* ── FOTOS ── */
   .church-photo { width: 100%; border-radius: 4px; border: 3px solid var(--pale-blue); box-shadow: 0 4px 18px rgba(15,40,80,0.18); margin: 1.2rem 0; display: block; object-fit: cover; }
   .photo-caption { font-size: 0.82rem; color: var(--muted); font-style: italic; text-align: center; margin-top: -0.6rem; margin-bottom: 1rem; }
   .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
   .photo-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; border: 3px solid var(--pale-blue); box-shadow: 0 3px 12px rgba(15,40,80,0.15); }
   @media(max-width:600px){ .photo-grid { grid-template-columns: 1fr; } }
 
-  /* ── BREADCRUMB & SUBNAV ── */
   .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.4rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
   .breadcrumb span { color: var(--gold); margin: 0 0.4rem; }
   .subnav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.8rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--pale-blue); }
@@ -68,20 +62,17 @@
   .subnav a:hover { background: var(--blue-mid); color: #fff; border-color: var(--blue-mid); }
   .subnav a.subnav-active { background: var(--blue-deep); color: #fff; border-color: var(--blue-deep); font-weight: 600; }
 
-  /* ── NEWS ── */
   .news-item { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue-mid); padding: 0.9rem 1.2rem; margin-bottom: 0.9rem; border-radius: 3px; transition: box-shadow 0.2s, border-left-color 0.2s; cursor: pointer; }
   .news-item:hover { box-shadow: 0 3px 14px rgba(30,80,140,0.14); border-left-color: var(--gold); }
   .news-item .tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--blue-mid); font-weight: 500; margin-bottom: 0.2rem; }
   .news-item .ni-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--blue-navy); }
   .news-item:hover .ni-title { color: var(--blue-mid); }
 
-  /* ── VIERING TABLE ── */
   .viering-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
   .viering-table th { background: var(--blue-deep); color: #fff; padding: 0.5rem 0.8rem; text-align: left; font-family: 'Playfair Display', serif; font-weight: 400; }
   .viering-table td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
   .viering-table tr:nth-child(even) td { background: var(--pale-blue); }
 
-  /* ── SIDEBAR ── */
   aside { font-size: 0.95rem; }
   .sidebar-box { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--blue-mid); padding: 1.2rem 1.2rem 1rem; margin-bottom: 1.6rem; border-radius: 3px; box-shadow: 0 2px 8px rgba(30,80,140,0.07); }
   .sidebar-box h3 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-style: normal; font-weight: 600; color: var(--blue-deep); text-transform: uppercase; letter-spacing: 0.07em; margin: 0 0 0.65rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--pale-blue); }
@@ -90,7 +81,6 @@
   .sidebar-box .address { line-height: 1.5; color: var(--muted); font-style: italic; font-size: 0.88rem; }
   .sidebar-photo { width: 100%; border-radius: 3px; margin-bottom: 1rem; border: 2px solid var(--pale-blue); display: block; object-fit: cover; height: 160px; }
 
-  /* ── CONTACT FORM ── */
   .contact-form { display: grid; gap: 1rem; margin-top: 1rem; }
   .contact-form label { font-size: 0.88rem; color: var(--muted); display: block; margin-bottom: 0.2rem; }
   .contact-form input, .contact-form textarea { width: 100%; padding: 0.55rem 0.8rem; border: 1px solid var(--border); background: #fff; font-family: 'EB Garamond', serif; font-size: 1rem; color: var(--text); border-radius: 3px; outline: none; transition: border-color 0.2s; }
@@ -99,10 +89,8 @@
   .btn { display: inline-block; padding: 0.6rem 1.6rem; background: var(--blue-deep); color: #fff; border: none; font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s; border-radius: 3px; }
   .btn:hover { background: var(--blue-navy); }
 
-  /* ── HOMILIE ── */
   .homilie { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue-mid); padding: 1.5rem 1.8rem; margin-top: 1rem; border-radius: 3px; line-height: 1.9; }
 
-  /* ── KIDS ── */
   .kids-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
   @media(max-width:600px){ .kids-grid { grid-template-columns: 1fr; } }
   .kids-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; text-align: center; cursor: pointer; transition: box-shadow 0.2s, transform 0.2s; }
@@ -110,12 +98,10 @@
   .kids-card .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
   .kids-card h3 { font-style: normal; color: var(--blue-deep); margin: 0 0 0.5rem; }
 
-  /* ── PARTNERS ── */
   .partners { display: grid; gap: 1rem; margin-top: 1rem; }
   .partner-item { background: var(--white); border: 1px solid var(--border); padding: 1rem 1.3rem; border-radius: 3px; border-left: 4px solid var(--blue-mid); }
   .partner-item strong { color: var(--blue-deep); }
 
-  /* ── MAP ── */
   .map-box { background: var(--pale-blue); border: 1px solid var(--border); padding: 1.5rem; text-align: center; color: var(--muted); font-style: italic; border-radius: 4px; margin-top: 1rem; }
 
   /* ── AGENDA ── */
@@ -139,7 +125,6 @@
   .ev-nacht { color: #2d6a9f; }
   .agenda-legenda { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.55rem; font-size: 0.78rem; color: var(--muted); font-style: italic; }
 
-  /* ── ARCHIEF LIJST ── */
   .archief-lijst { list-style: none; margin: 0; padding: 0; }
   .archief-lijst li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.32rem 0; border-bottom: 1px solid var(--pale-blue); font-size: 0.93rem; }
   .archief-lijst li:last-child { border-bottom: none; }
@@ -147,13 +132,11 @@
   .archief-lijst a:hover { color: var(--gold); }
   .al-datum { font-size: 0.78rem; color: var(--muted); white-space: nowrap; font-style: italic; flex-shrink: 0; }
 
-  /* ── PAULUS BOX ── */
   .paulus-box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 1.3rem 1.7rem; border-radius: 3px; margin-top: 0.9rem; box-shadow: 0 2px 8px rgba(15,40,80,0.07); }
   .paulus-box h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--blue-deep); font-style: normal; margin: 0 0 0.6rem; }
   .paulus-knop { display: inline-block; margin-top: 0.7rem; padding: 0.5rem 1.3rem; background: var(--blue-deep); color: #fff; font-family: 'EB Garamond', serif; font-size: 0.94rem; letter-spacing: 0.04em; text-decoration: none; border-radius: 3px; transition: background 0.2s; }
   .paulus-knop:hover { background: var(--gold); color: var(--blue-navy); text-decoration: none; }
 
-  /* ── FOTO GALERIJ ── */
   .act-subnav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.6rem; padding-bottom: 1rem; border-bottom: 2px solid var(--pale-blue); }
   .act-subnav a { display: inline-block; padding: 0.35rem 0.9rem; background: var(--pale-blue); color: var(--blue-deep); text-decoration: none; border-radius: 3px; font-size: 0.88rem; font-family: 'EB Garamond', serif; border: 1px solid var(--border); transition: background 0.2s, color 0.2s; cursor: pointer; }
   .act-subnav a:hover { background: var(--blue-mid); color: #fff; border-color: var(--blue-mid); }
@@ -165,11 +148,9 @@
   .foto-item { position: relative; overflow: hidden; border-radius: 3px; border: 2px solid var(--pale-blue); background: var(--pale-blue); aspect-ratio: 4/3; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
   .foto-item:hover { transform: scale(1.03); box-shadow: 0 5px 16px rgba(15,40,80,0.2); border-color: var(--gold); }
   .foto-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .foto-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,39,68,0.8); color: var(--gold-lt); font-size: 0.74rem; font-family: 'Playfair Display', serif; padding: 0.28rem 0.55rem; }
   .foto-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #7a9ec0; font-size: 0.74rem; font-family: 'EB Garamond', serif; gap: 0.35rem; text-align: center; padding: 0.4rem; }
   .foto-ph .fi { font-size: 1.7rem; opacity: 0.45; }
 
-  /* ── LIGHTBOX ── */
   #lightbox { display: none; position: fixed; inset: 0; background: rgba(8,18,36,0.95); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; }
   #lightbox.open { display: flex; }
   #lightbox img { max-width: 88vw; max-height: 82vh; object-fit: contain; border: 2px solid var(--gold); border-radius: 3px; }
@@ -210,7 +191,6 @@
   .admin-trigger { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--blue-deep); color: var(--gold-lt); border: 2px solid var(--gold); border-radius: 50px; padding: 0.55rem 1.2rem; font-family: 'EB Garamond', serif; font-size: 0.88rem; letter-spacing: 0.06em; cursor: pointer; box-shadow: 0 4px 16px rgba(10,30,60,0.3); transition: background 0.2s, transform 0.15s; z-index: 999; display: flex; align-items: center; gap: 0.5rem; }
   .admin-trigger:hover { background: var(--gold); color: var(--blue-navy); transform: translateY(-2px); }
 
-  /* ── FOOTER ── */
   footer { background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-deep) 100%); color: #cfe2f5; text-align: center; padding: 2rem 1rem; font-size: 0.88rem; border-top: 4px solid var(--gold); margin-top: 1rem; }
   footer a { color: var(--gold-lt); }
   footer .footer-cross { font-size: 2rem; color: var(--gold); display: block; margin-bottom: 0.6rem; }
@@ -238,6 +218,7 @@
   <a onclick="navigate('vieringen')"    data-page="vieringen">Vieringen</a>
   <a onclick="navigate('activiteiten')" data-page="activiteiten">Activiteiten</a>
   <a onclick="navigate('kinderen')"     data-page="kinderen">Kinderen &amp; Jongeren</a>
+  <a onclick="navigate('schelp')"       data-page="schelp">De Schelp</a>
   <a onclick="navigate('samenwerking')" data-page="samenwerking">Samenwerking</a>
   <a onclick="navigate('overlijden')"   data-page="overlijden">Overlijden</a>
   <a onclick="navigate('contact')"      data-page="contact">Contact</a>
@@ -250,7 +231,6 @@
 
 <button class="admin-trigger" onclick="openAdmin()">&#9998; Beheer agenda</button>
 
-<!-- Beheerpaneel -->
 <div id="admin-overlay">
   <div id="admin-panel">
     <button id="admin-close" onclick="closeAdmin()">&#x2715;</button>
@@ -288,7 +268,6 @@
   </div>
 </div>
 
-<!-- Lightbox -->
 <div id="lightbox">
   <span id="lb-sluit" onclick="sluitLb()">&#x2715;</span>
   <img id="lb-img" src="" alt="">
@@ -311,6 +290,7 @@
 // ═══════════════════════════════════════════════════════
 const EXT = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Exterieur_Knop%204%201%20Icoon%20Kerkgebouw%20Goede%20Bijstand.jpg';
 const INT = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Interieur_Onze-Lieve-Vrouw%20van%20Goede%20Bijstandkerk_JPR4243_%C2%A9%20visit.brussels%20-%20Jean-Paul%20Remy.jpg';
+const ALT = 'https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Extra%20%28kunstwerk%20detail%29_Altaar%20Goede%20Bijstandskerk_0.jpg';
 
 const DNKORT = ["Zo","Ma","Di","Wo","Do","Vr","Za"];
 const MNKORT = ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
@@ -320,19 +300,15 @@ const EVICON = { viering:"✝", activiteit:"◆", muziek:"♫", taize:"✦", nac
 // ═══════════════════════════════════════════════════════
 // AGENDA DATA
 // ═══════════════════════════════════════════════════════
-
-// Eenmalige bijzondere vieringen
 const VASTE_DATUMS = [
   { datum:"2026-04-04", tijd:"21:00", type:"viering", tekst:"Paaswake — Goede Bijstand" },
   { datum:"2026-04-05", tijd:"11:00", type:"viering", tekst:"Pasen — Goede Bijstand" },
 ];
 
-// Derde zaterdag van de maand = Taizé-avond
 function genereerTaize() {
   const resultaat = [];
   const nu = new Date(); nu.setHours(0,0,0,0);
   const einde = new Date(nu); einde.setDate(nu.getDate() + 35);
-  // Loop over 3 maanden om zeker het venster te dekken
   for (let m = 0; m < 3; m++) {
     const jr = nu.getFullYear() + Math.floor((nu.getMonth() + m) / 12);
     const mn = (nu.getMonth() + m) % 12;
@@ -343,7 +319,6 @@ function genereerTaize() {
       if (d.getDay() === 6) {
         teller++;
         if (teller === 3) {
-          // Alleen tonen als binnen het 35-dagenvenster
           if (d >= nu && d <= einde) {
             const key = `${jr}-${String(mn+1).padStart(2,'0')}-${String(dag).padStart(2,'0')}`;
             resultaat.push({ datum: key, tijd: "20:00", type: "taize", tekst: "Gebed in de geest van Taizé" });
@@ -356,13 +331,12 @@ function genereerTaize() {
   return resultaat;
 }
 
-// Elke vrijdag van mei t.e.m. augustus = Bijstand by Night
 function genereerBijstandByNight() {
   const resultaat = [];
   const nu = new Date(); nu.setHours(0,0,0,0);
   const einde = new Date(nu); einde.setDate(nu.getDate() + 35);
   for (let d = new Date(nu); d <= einde; d.setDate(d.getDate() + 1)) {
-    const mn = d.getMonth(); // 4=mei … 7=aug
+    const mn = d.getMonth();
     if (d.getDay() === 5 && mn >= 4 && mn <= 7) {
       const key = `${d.getFullYear()}-${String(mn+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
       resultaat.push({ datum: key, tijd: "18:00", type: "nacht", tekst: "Bijstand by Night (18–22 u)" });
@@ -371,69 +345,48 @@ function genereerBijstandByNight() {
   return resultaat;
 }
 
-// Gebruikersevents via localStorage
 const STORAGE_KEY = 'gb_agenda_extra';
 function laadExtra() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
   catch(e) { return []; }
 }
-function slaOpExtra(arr) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-}
+function slaOpExtra(arr) { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
 
-// Alle events samenvoegen en per datum groeperen
 function getAlleEvents() {
-  const alle = [
-    ...VASTE_DATUMS,
-    ...genereerTaize(),
-    ...genereerBijstandByNight(),
-    ...laadExtra()
-  ];
+  const alle = [...VASTE_DATUMS, ...genereerTaize(), ...genereerBijstandByNight(), ...laadExtra()];
   const kaart = {};
   alle.forEach(ev => {
     if (!kaart[ev.datum]) kaart[ev.datum] = [];
     kaart[ev.datum].push(ev);
   });
-  // Sorteer per datum op tijd
-  Object.keys(kaart).forEach(d => {
-    kaart[d].sort((a,b) => (a.tijd||'00:00').localeCompare(b.tijd||'00:00'));
-  });
+  Object.keys(kaart).forEach(d => kaart[d].sort((a,b) => (a.tijd||'00:00').localeCompare(b.tijd||'00:00')));
   return kaart;
 }
 
-// Datumstring ophalen voor een Date-object
 function datumSleutel(d) {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
 
 // ═══════════════════════════════════════════════════════
-// AGENDA HTML — enkel dagen mét activiteit, 35 dagen
+// AGENDA HTML
 // ═══════════════════════════════════════════════════════
 function agendaHTML() {
   const alleEvents = getAlleEvents();
   const nu = new Date(); nu.setHours(0,0,0,0);
-
   let h = '<div class="agenda-wrapper">';
   let huidigeMaand = -1;
   let aantalDagen = 0;
 
   for (let i = 0; i < 35; i++) {
     const d = new Date(nu); d.setDate(nu.getDate() + i);
-    const dw  = d.getDay();
-    const mn  = d.getMonth();
-    const jr  = d.getFullYear();
-    const nr  = d.getDate();
-    const s   = datumSleutel(d);
+    const dw = d.getDay(), mn = d.getMonth(), jr = d.getFullYear(), nr = d.getDate();
+    const s = datumSleutel(d);
 
-    // Vaste wekelijkse vieringen
     const vast = [];
     if (dw === 0) vast.push({ tijd:"11:00", type:"viering", tekst:"Zondagsviering — Goede Bijstand" });
     if (dw === 6) vast.push({ tijd:"16:30", type:"viering", tekst:"Mis — Finis Terrae" });
 
-    // Extra events voor deze dag
     const extra = alleEvents[s] || [];
-
-    // Dedupliceer op tijd+tekst combinatie
     const gezien = new Set();
     const evs = [...vast, ...extra].filter(ev => {
       const sleutel = (ev.tijd||'') + '|' + ev.tekst;
@@ -442,49 +395,35 @@ function agendaHTML() {
       return true;
     });
 
-    // Sla lege dagen over
     if (!evs.length) continue;
-
     aantalDagen++;
 
-    // Maandkop tonen bij nieuwe maand
     if (mn !== huidigeMaand) {
       huidigeMaand = mn;
       h += `<div class="agenda-maand-header">${MNLANG[mn]} ${jr}</div>`;
     }
 
-    const klassen = [
-      'agenda-dag',
-      (dw === 0 || dw === 6) ? 'weekend' : '',
-      i === 0 ? 'vandaag' : ''
-    ].filter(Boolean).join(' ');
-
-    h += `<div class="${klassen}">`;
-    h += `<div class="datum-cel">
-      <span class="dag-naam">${i === 0 ? 'Vandaag' : DNKORT[dw]}</span>
+    const klassen = ['agenda-dag', (dw===0||dw===6)?'weekend':'', i===0?'vandaag':''].filter(Boolean).join(' ');
+    h += `<div class="${klassen}"><div class="datum-cel">
+      <span class="dag-naam">${i===0?'Vandaag':DNKORT[dw]}</span>
       <span class="dag-nr">${nr}</span>
       <span class="maand-kort">${MNKORT[mn]}</span>
-    </div>`;
-    h += `<div class="ev-cel">`;
+    </div><div class="ev-cel">`;
     evs.forEach(ev => {
-      const extraKlasse = ev.type === 'taize' ? ' ev-taize' : ev.type === 'nacht' ? ' ev-nacht' : '';
+      const kl = ev.type==='taize' ? ' ev-taize' : ev.type==='nacht' ? ' ev-nacht' : '';
       h += `<div class="evenement">
-        <span class="ev-tijd">${ev.tijd || ''}</span>
-        <span class="ev-icoon${extraKlasse}">${EVICON[ev.type] || '✝'}</span>
-        <span>${ev.tekst}</span>
+        <span class="ev-tijd">${ev.tijd||''}</span>
+        <span class="ev-icoon${kl}">${EVICON[ev.type]||'✝'}</span>
+        <span class="${kl.trim()}">${ev.tekst}</span>
       </div>`;
     });
     h += `</div></div>`;
   }
 
-  if (!aantalDagen) {
-    h += `<div style="padding:0.7rem 1rem;font-style:italic;color:var(--muted);font-size:0.88rem;">Geen activiteiten gepland in de komende 5 weken.</div>`;
-  }
-
-  h += `</div>`;
-  h += `<div class="agenda-legenda">
+  if (!aantalDagen) h += `<div style="padding:0.7rem 1rem;font-style:italic;color:var(--muted);font-size:0.88rem;">Geen activiteiten gepland in de komende 5 weken.</div>`;
+  h += `</div><div class="agenda-legenda">
     <span>✝ Viering</span>
-    <span>✦ Taizé</span>
+    <span style="color:var(--blue-mid);font-style:italic;">✦ Taizé</span>
     <span>🌙 Bijstand by Night</span>
     <span>◆ Activiteit</span>
     <span>♫ Muziek/Concert</span>
@@ -497,24 +436,18 @@ function agendaHTML() {
 // ═══════════════════════════════════════════════════════
 function openAdmin() {
   const pw = prompt('Wachtwoord:');
-  if (pw !== 'mijnwachtwoord') return;
+  if (pw !== 'goedebijstand') return;
   document.getElementById('admin-overlay').classList.add('open');
   adminTab('toevoegen');
 }
-function closeAdmin() {
-  document.getElementById('admin-overlay').classList.remove('open');
-}
-document.getElementById('admin-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeAdmin();
-});
+function closeAdmin() { document.getElementById('admin-overlay').classList.remove('open'); }
+document.getElementById('admin-overlay').addEventListener('click', function(e) { if (e.target===this) closeAdmin(); });
 
 function adminTab(k) {
-  document.getElementById('atab-toevoegen').style.display = k === 'toevoegen' ? 'block' : 'none';
-  document.getElementById('atab-lijst').style.display     = k === 'lijst'      ? 'block' : 'none';
-  document.querySelectorAll('.admin-tab').forEach((t, idx) => {
-    t.classList.toggle('actief', (k === 'toevoegen' && idx === 0) || (k === 'lijst' && idx === 1));
-  });
-  if (k === 'lijst') renderEvLijst();
+  document.getElementById('atab-toevoegen').style.display = k==='toevoegen' ? 'block' : 'none';
+  document.getElementById('atab-lijst').style.display     = k==='lijst'      ? 'block' : 'none';
+  document.querySelectorAll('.admin-tab').forEach((t,idx) => t.classList.toggle('actief', (k==='toevoegen'&&idx===0)||(k==='lijst'&&idx===1)));
+  if (k==='lijst') renderEvLijst();
 }
 
 function voegToe() {
@@ -522,36 +455,23 @@ function voegToe() {
   const tijd  = document.getElementById('adm-tijd').value || '';
   const tekst = document.getElementById('adm-tekst').value.trim();
   const type  = document.getElementById('adm-type').value;
-
-  if (!datum || !tekst) {
-    alert('Vul minstens een datum en een omschrijving in.');
-    return;
-  }
-
+  if (!datum || !tekst) { alert('Vul minstens een datum en een omschrijving in.'); return; }
   const extra = laadExtra();
   extra.push({ datum, tijd, type, tekst });
   slaOpExtra(extra);
-
   document.getElementById('adm-datum').value = '';
   document.getElementById('adm-tijd').value  = '';
   document.getElementById('adm-tekst').value = '';
   document.getElementById('adm-type').value  = 'viering';
-
   const succ = document.getElementById('adm-success');
   succ.classList.add('show');
   setTimeout(() => succ.classList.remove('show'), 3000);
-
   herlaadAgendaDOM();
 }
 
 function herlaadAgendaDOM() {
-  document.querySelectorAll('.agenda-wrapper').forEach(el => {
-    el.outerHTML = agendaHTML();
-  });
-  // Verwijder eventuele dubbele legenda's
-  document.querySelectorAll('.agenda-legenda').forEach((el, i) => {
-    if (i > 0) el.remove();
-  });
+  document.querySelectorAll('.agenda-wrapper').forEach(el => { el.outerHTML = agendaHTML(); });
+  document.querySelectorAll('.agenda-legenda').forEach((el,i) => { if (i>0) el.remove(); });
 }
 
 function renderEvLijst() {
@@ -565,9 +485,8 @@ function renderEvLijst() {
   if (!extra.length) {
     h += '<div class="ev-leeg">Nog geen evenementen toegevoegd.</div>';
   } else {
-    const gesorteerd = [...extra].sort((a,b) => a.datum.localeCompare(b.datum));
-    gesorteerd.forEach(ev => {
-      const origIdx = extra.findIndex(e => e.datum === ev.datum && e.tekst === ev.tekst && e.tijd === ev.tijd);
+    [...extra].sort((a,b) => a.datum.localeCompare(b.datum)).forEach(ev => {
+      const origIdx = extra.findIndex(e => e.datum===ev.datum && e.tekst===ev.tekst && e.tijd===ev.tijd);
       h += `<div class="ev-rij"><div class="ev-info"><span class="ev-datum-tag">${formatDatumNl(ev.datum)} ${ev.tijd||''}</span><span class="ev-naam">${ev.tekst}</span></div><span class="ev-type-badge">${ev.type}</span>&nbsp;<button class="btn-danger" onclick="verwijderEv(${origIdx})">×</button></div>`;
     });
   }
@@ -575,16 +494,12 @@ function renderEvLijst() {
 }
 
 function verwijderEv(idx) {
-  const extra = laadExtra();
-  extra.splice(idx, 1);
-  slaOpExtra(extra);
-  renderEvLijst();
-  herlaadAgendaDOM();
+  const extra = laadExtra(); extra.splice(idx,1); slaOpExtra(extra); renderEvLijst(); herlaadAgendaDOM();
 }
 
 function formatDatumNl(s) {
   if (!s) return '';
-  const [jr, mn, dg] = s.split('-');
+  const [jr,mn,dg] = s.split('-');
   return `${dg} ${MNKORT[parseInt(mn,10)-1]} ${jr}`;
 }
 
@@ -592,24 +507,17 @@ function formatDatumNl(s) {
 // LIGHTBOX
 // ═══════════════════════════════════════════════════════
 function sluitLb() { document.getElementById('lightbox').classList.remove('open'); }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { sluitLb(); closeAdmin(); } });
-document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) sluitLb(); });
+document.addEventListener('keydown', e => { if (e.key==='Escape') { sluitLb(); closeAdmin(); } });
+document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target===this) sluitLb(); });
 
 // ═══════════════════════════════════════════════════════
-// FOTO GALERIJ HELPER
+// HELPERS
 // ═══════════════════════════════════════════════════════
 function fotoBlok(titel, omschr, icoon) {
   const ph = `<div class="foto-item"><div class="foto-ph"><span class="fi">${icoon}</span>Foto toevoegen</div></div>`;
-  return `<div class="foto-categorie">
-    <h3 class="foto-cat-titel">${titel}</h3>
-    <p class="foto-omschr">${omschr}</p>
-    <div class="foto-grid">${ph}${ph}${ph}</div>
-  </div>`;
+  return `<div class="foto-categorie"><h3 class="foto-cat-titel">${titel}</h3><p class="foto-omschr">${omschr}</p><div class="foto-grid">${ph}${ph}${ph}</div></div>`;
 }
 
-// ═══════════════════════════════════════════════════════
-// SIDEBAR
-// ═══════════════════════════════════════════════════════
 function getSidebar() {
   return `
   <img src="${EXT}" alt="Onze-Lieve-Vrouw van Goede Bijstand" class="sidebar-photo">
@@ -648,35 +556,27 @@ function getSidebar() {
   </div>`;
 }
 
-// ═══════════════════════════════════════════════════════
-// SUBNAVIGATIE HELPERS
-// ═══════════════════════════════════════════════════════
 function showSub(k) {
-  document.querySelectorAll('.subpage').forEach(el => el.style.display = 'none');
-  const t = document.getElementById('sub-' + k);
-  if (t) t.style.display = 'block';
-  document.querySelectorAll('[data-sub]').forEach(a => a.classList.toggle('subnav-active', a.dataset.sub === k));
+  document.querySelectorAll('.subpage').forEach(el => el.style.display='none');
+  const t = document.getElementById('sub-'+k); if (t) t.style.display='block';
+  document.querySelectorAll('[data-sub]').forEach(a => a.classList.toggle('subnav-active', a.dataset.sub===k));
 }
 function showVierSub(k) {
-  document.querySelectorAll('.vsub').forEach(el => el.style.display = 'none');
-  const t = document.getElementById('vsub-' + k);
-  if (t) t.style.display = 'block';
-  document.querySelectorAll('[data-vsub]').forEach(a => a.classList.toggle('subnav-active', a.dataset.vsub === k));
+  document.querySelectorAll('.vsub').forEach(el => el.style.display='none');
+  const t = document.getElementById('vsub-'+k); if (t) t.style.display='block';
+  document.querySelectorAll('[data-vsub]').forEach(a => a.classList.toggle('subnav-active', a.dataset.vsub===k));
 }
 function showActSub(k) {
-  ['overzicht','fotos'].forEach(id => {
-    const el = document.getElementById('asub-' + id);
-    if (el) el.style.display = (id === k) ? 'block' : 'none';
-  });
-  document.querySelectorAll('[data-asub]').forEach(a => a.classList.toggle('act-actief', a.dataset.asub === k));
+  ['overzicht','fotos'].forEach(id => { const el=document.getElementById('asub-'+id); if(el) el.style.display=(id===k)?'block':'none'; });
+  document.querySelectorAll('[data-asub]').forEach(a => a.classList.toggle('act-actief', a.dataset.asub===k));
 }
 
 // ═══════════════════════════════════════════════════════
-// PAGINA-INHOUD
+// PAGINA'S
 // ═══════════════════════════════════════════════════════
 const pages = {
 
-  home: { title: 'Home', content: () => `
+  home: { title:'Home', content:() => `
     <section>
       <img src="${EXT}" alt="Kerk van Goede Bijstand" class="church-photo" style="height:260px;">
       <p class="photo-caption">De barokke gevel van de Kerk van Goede Bijstand aan de Kolenmarkt &#169; Johan Bakker / CC Wikimedia</p>
@@ -684,7 +584,6 @@ const pages = {
       <p style="font-style:italic;color:var(--muted);margin-bottom:0.6rem;">Overzicht van de komende 5 weken. Enkel dagen met een viering of activiteit worden getoond.</p>
       ${agendaHTML()}
     </section>
-
     <section>
       <h2>Paulusgemeenschappen</h2>
       <p>Onze parochie Goede Bijstand maakt deel uit van de <strong>Paulusgemeenschappen</strong>, een samenwerkingsverband van Nederlandstalige geloofsgemeenschappen in Brussel rond de kerken van Onze-Lieve-Vrouw van Vreugde (Anderlecht), Onze-Lieve-Vrouw van Goede Bijstand (Centrum), Sint-Pieter (Ukkel), Sint-Jozef (Evere), Sint-Martinus (Ganshoren) en de Verrijzenis (Molenbeek).</p>
@@ -695,7 +594,6 @@ const pages = {
         <a class="paulus-knop" href="https://www.paulusgemeenschappen.be/nl" target="_blank" rel="noopener">Bezoek paulusgemeenschappen.be &#8594;</a>
       </div>
     </section>
-
     <section>
       <h2>Gebed in de geest van Taiz&#233;</h2>
       <p><em>Elke derde zaterdag van de maand &mdash; 20.00&nbsp;u &mdash; Kerk van Goede Bijstand</em></p>
@@ -704,20 +602,17 @@ const pages = {
       <p><strong>20.00&nbsp;u</strong> Gebed &nbsp;|&nbsp; <strong>20.40&nbsp;u</strong> Stilte met instrumentale Taizéliederen &nbsp;|&nbsp; <strong>21.00&nbsp;u</strong> Kort gebed en zang &mdash; herhaald elk kwartier tot 22.30&nbsp;u.</p>
       <p>Voor meer informatie: <a href="mailto:bep.saintandre@gmail.com">bep.saintandre@gmail.com</a></p>
     </section>
-
     <section>
       <h2>Bijstand by Night</h2>
       <p><em>Elke vrijdagavond van mei t.e.m. augustus &mdash; 18 tot 22 uur</em></p>
       <p>Van mei tot en met augustus stellen we de Bijstandskerk <strong>elke vrijdagavond</strong> open. We delen de kerk, bij stilte of serene muziek, met vaak onverwachte, mooie ontmoetingen.</p>
       <p>Contact: <a href="mailto:eheesen@hotmail.com">Nieneke</a> of <a href="mailto:danny.decock59@yahoo.com">Danny</a></p>
     </section>
-
     <section>
       <h2>Kerstbrief 2025</h2>
       <p><strong>De Kleine Zusters van Jezus in Belgi&#235;</strong></p>
       <p><a href="Vieringen en liturgie/Kerst/20251222_Kerstbrief.pdf" target="_blank">Lees hier de Kerstbrief 2025 &#8594;</a></p>
     </section>
-
     <section>
       <h2>Nieuws</h2>
       <div class="news-item" onclick="navigate('vieringen')"><div class="tag">Vieringen</div><div class="ni-title">Overzicht Vieringen April</div></div>
@@ -727,7 +622,7 @@ const pages = {
       <div class="news-item" onclick="navigate('homilie')"><div class="tag">Homilies</div><div class="ni-title">Kerstmis: moet ik zwijgen?</div></div>
     </section>` },
 
-  bijstand: { title: 'De Goede Bijstand', content: () => `
+  bijstand: { title:'De Goede Bijstand', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> De Goede Bijstand</div>
       <div class="subnav">
@@ -740,7 +635,6 @@ const pages = {
         <a onclick="showSub('gebed')"         data-sub="gebed">Gebed</a>
         <a onclick="showSub('steunen')"       data-sub="steunen">Steunen</a>
       </div>
-
       <div id="sub-welkom" class="subpage">
         <h2>Welkom</h2>
         <div class="photo-grid">
@@ -751,7 +645,6 @@ const pages = {
         <p>Misschien bent u benieuwd naar wie we zijn en wat we doen. Misschien wilt u ons een vraag stellen. Misschien zag u ons op tv en bent u op zoek naar een tekst uit de viering. Misschien bent u gewoon op zoek &hellip;</p>
         <p>Hoe dan ook: welkom. We hopen dat u vindt wat u zoekt &mdash; en niet alleen op onze website.</p>
       </div>
-
       <div id="sub-krachtlijnen" class="subpage" style="display:none;">
         <h2>Krachtlijnen</h2>
         <p><em>Wie zijn we en van waaruit leven en werken we?</em></p>
@@ -760,7 +653,6 @@ const pages = {
         <p><strong>Verbonden zijn we</strong>, als we vieren in de kring, ongedwongen en geborgen. Als we, ge&#239;nspireerd door Jezus, brood en wijn delen omdat we ook brood en wijn voor elkaar willen zijn.</p>
         <p>Als parochiegemeenschap leven en werken we vanuit de overtuiging dat een mens niet gemaakt is om alleen op weg te gaan, maar om er te zijn voor elkaar.</p>
       </div>
-
       <div id="sub-gemeenschap" class="subpage" style="display:none;">
         <h2>Onze gemeenschap</h2>
         <img src="${INT}" alt="Interieur kerk" class="church-photo" style="height:220px;">
@@ -768,19 +660,16 @@ const pages = {
         <p>Iedereen is welkom. Onze deuren staan open. Het wel en wee van het leven en de stad mag bij ons binnenstromen.</p>
         <p>Centraal staan de vele ontmoetingen in evenveel vormen. Op zondag treffen we elkaar in de viering die begint in de kerk en eindigt bij een aperitiefje in De Schelp (parochiezaaltje). Hier groeien initiatieven en worden afspraken beklonken.</p>
       </div>
-
       <div id="sub-team" class="subpage" style="display:none;">
         <h2>Team</h2>
         <p>Het team bestaat uit twee pastores. Het team draagt de verantwoordelijkheid om de krachten, de opdrachten en de zending van de gemeenschap te waarborgen en te ondersteunen.</p>
         <div class="partner-item" style="margin-top:1.2rem;"><strong>Johnny De Mot</strong><p>Pastoor Goede Bijstand, Verantwoordelijke Nederlandstalige pastoraal Brussel centrum<br><a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a></p></div>
       </div>
-
       <div id="sub-parochieploeg" class="subpage" style="display:none;">
         <h2>Parochieploeg</h2>
         <p>De parochieploeg bestaat uit vijf leden: de bedienaar, twee pastores en twee leken. Ze vergadert elke eerste woensdagvoormiddag van de maand.</p>
         <div class="partner-item" style="margin-top:1rem;"><strong>Samenstelling</strong><p>Johnny De Mot, Magda De Cock, Goedele Miseur, Lieven Baert, Ellen Keersmaekers</p></div>
       </div>
-
       <div id="sub-kerkfabriek" class="subpage" style="display:none;">
         <h2>Kerkfabriek</h2>
         <p>Erediensten zijn een gewestbevoegdheid inzake de erkenning van plaatselijke gemeenschappen, de organisatie en financiering van de instellingen belast met het beheer van de temporali&#235;n van de erediensten.</p>
@@ -789,7 +678,6 @@ const pages = {
         <div class="partner-item" style="margin-top:1rem;"><strong>Raad van bestuur</strong><p>Evelien Leys &mdash; voorzitter<br>Lieven Baert &mdash; secretaris<br>Lode Vanderbeken &mdash; penningmeester<br>Laura Lievevrouw, Freddy Gerard</p></div>
         <p style="margin-top:1rem;">Contact: <a href="mailto:2096@diomb.be">2096@diomb.be</a></p>
       </div>
-
       <div id="sub-gebed" class="subpage" style="display:none;">
         <h2>Gebed: Forgive Me</h2>
         <div class="homilie">
@@ -799,7 +687,6 @@ const pages = {
           <p style="font-size:0.9rem;color:var(--muted);font-style:italic;margin-top:1rem;">Bewerkt en ons toegestuurd door Ignace Menschaert uit Kerksken</p>
         </div>
       </div>
-
       <div id="sub-steunen" class="subpage" style="display:none;">
         <h2>Steunen</h2>
         <p>Steun de parochie met een gift op volgend rekeningnummer:</p>
@@ -808,7 +695,7 @@ const pages = {
       </div>
     </section>` },
 
-  vieringen: { title: 'Vieringen', content: () => `
+  vieringen: { title:'Vieringen', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Vieringen</div>
       <h2>Vieringen</h2>
@@ -818,7 +705,6 @@ const pages = {
         <a onclick="showVierSub('bezinning')" data-vsub="bezinning">Bezinningsteksten</a>
         <a onclick="showVierSub('fotos')"     data-vsub="fotos">&#128247; Foto's</a>
       </div>
-
       <div id="vsub-overzicht" class="vsub">
         <img src="${INT}" alt="Interieur kerk" class="church-photo" style="height:200px;">
         <p class="photo-caption">Het interieur van de Kerk van Goede Bijstand &#169; Jean-Paul Remy / visit.brussels</p>
@@ -832,7 +718,6 @@ const pages = {
         </table>
         <p style="margin-top:1rem;font-size:0.88rem;color:var(--muted);font-style:italic;">Alle vieringen zijn ook zichtbaar in de <a onclick="navigate('home')">agenda op de homepage</a>.</p>
       </div>
-
       <div id="vsub-homilies" class="vsub" style="display:none;">
         <p style="font-style:italic;color:var(--muted);margin-bottom:1rem;">Homilies van vieringen in de Kerk van Goede Bijstand.</p>
         <ul class="archief-lijst">
@@ -841,34 +726,21 @@ const pages = {
           <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 16 januari 2022.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">16 januari 2022</span></li>
           <li><a href="Homilies/Homilies_2010-2025/Mijmeringen bij de Afrikadag 2 januari 2022.pdf" target="_blank">Mijmeringen bij de Afrikadag</a> <span class="al-datum">2 januari 2022</span></li>
           <li><a href="Homilies/Homilies_2010-2025/Paaswake 13 april 2020.pdf" target="_blank">Paaswake</a> <span class="al-datum">13 april 2020</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Goedele MiseurHomilie viering, 20 oktober 2019.pdf" target="_blank">Homilie viering</a> <span class="al-datum">20 oktober 2019</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie viering, 17 december 2017.pdf" target="_blank">Homilie viering</a> <span class="al-datum">17 december 2017</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie viering, 1e adventszondag B, 3 december 2017.pdf" target="_blank">Homilie viering, 1e adventszondag B</a> <span class="al-datum">3 december 2017</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 18 december 2016.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 december 2016</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie viering 9 november 2014.pdf" target="_blank">Homilie viering</a> <span class="al-datum">9 november 2014</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie Paus Franciscus 19 maart 2013.pdf" target="_blank">Homilie Paus Franciscus</a> <span class="al-datum">19 maart 2013</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 12 februari 2012.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">12 februari 2012</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/2e Zondag door het jaar.pdf" target="_blank">2e Zondag door het jaar</a></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie Kerstmis 25 december 2011.pdf" target="_blank">Homilie Kerstmis</a> <span class="al-datum">25 december 2011</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 18 december 2011.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 december 2011</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Over weinig waart ge trouw, over veel zal ik u aanstellen.pdf" target="_blank">Over weinig waart ge trouw, over veel zal ik u aanstellen</a></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 11 september 2011.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">11 september 2011</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20191020/" target="_blank">Homilie viering</a> <span class="al-datum">20 oktober 2019</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20171217/" target="_blank">Homilie viering</a> <span class="al-datum">17 december 2017</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20171203/" target="_blank">Homilie viering, 1e adventszondag B</a> <span class="al-datum">3 december 2017</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20161218/" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 december 2016</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieViering20141109/" target="_blank">Homilie viering</a> <span class="al-datum">9 november 2014</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomiliePausFranciscus20130319/" target="_blank">Homilie Paus Franciscus</a> <span class="al-datum">19 maart 2013</span></li>
+          <li><a href="http://www.goedebijstand.be/Vieringen/Homilies/HomilieTvmis20120212/" target="_blank">Homilie tv-mis</a> <span class="al-datum">12 februari 2012</span></li>
           <li><a href="Homilies/Homilies_KerkelijkJaar/Zie het Lam Gods_2e zondag A.png" target="_blank">Zie het Lam Gods</a> <span class="al-datum">2e zondag A</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 10 oktober 2010.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">10 oktober 2010</span></li>
-          <li><a href="Homilies/Homilies_2010-2025/Homilie tv-mis 18 juli 2010.pdf" target="_blank">Homilie tv-mis</a> <span class="al-datum">18 juli 2010</span></li>
           <li><a href="Homilies/Homilies_KerkelijkJaar/Bruiloft te Cana_2e zondag C.png" target="_blank">Bruiloft te Cana</a> <span class="al-datum">2e zondag C</span></li>
           <li><a href="Homilies/Homilies_KerkelijkJaar/Zijn er nog profeten_14e zondag B.png" target="_blank">Zijn er nog profeten?</a> <span class="al-datum">14e zondag B</span></li>
-          <li><a href="Homilies/Homilies_KerkelijkJaar/Filippus en de Ethiopische eunuch_5e zondag van Pasen B.png" target="_blank">Filippus en de Ethiopische eunuch</a> <span class="al-datum">5e zondag van Pasen B</span></li>
-          <li><a href="Homilies/Homilies_KerkelijkJaar/Wie zeggen de mensen dat ik ben_21e zondag A.pdf" target="_blank">Wie zeggen de mensen dat ik ben?</a> <span class="al-datum">21e zondag A</span></li>
-          <li><a href="Homilies/Homilies_KerkelijkJaar/Een duobaan Petrus en Paulus_Feest van Petrus en Paulus jaar A.png" target="_blank">Een duobaan: Petrus en Paulus</a></li>
           <li><a href="Homilies/Homilies_KerkelijkJaar/De goede herder_4e Paaszondag A.png" target="_blank">De goede herder</a> <span class="al-datum">4e Paaszondag A</span></li>
           <li><a href="Homilies/Homilies_KerkelijkJaar/Lazarus_5e zondag van de vasten A.png" target="_blank">Lazarus</a> <span class="al-datum">5e zondag van de vasten A</span></li>
           <li><a href="Homilies/Homilies_KerkelijkJaar/Een droom van gerechtigheid_4e Adventszondag A.pdf" target="_blank">Een droom van gerechtigheid</a> <span class="al-datum">4e adventszondag A</span></li>
-          <li><a href="Homilies/Homilies_KerkelijkJaar/Johannes, de profeet_3e Adventszondag A.png" target="_blank">Johannes, de profeet</a> <span class="al-datum">3e adventszondag A</span></li>
-          <li><a href="Homilies/Homilies_KerkelijkJaar/Een visioen van Jesaja_2e Adventszondag A.png" target="_blank">Een visioen van Jesaja</a> <span class="al-datum">2e adventszondag A</span></li>
         </ul>
       </div>
-
       <div id="vsub-bezinning" class="vsub" style="display:none;">
         <p style="font-style:italic;color:var(--muted);margin-bottom:1rem;">Bezinningsteksten, getuigenissen en spirituele reflecties.</p>
         <ul class="archief-lijst">
@@ -887,12 +759,10 @@ const pages = {
           <li><a href="Bezinningsteksten_2021/Paasboodschap van Paus Franciscus 5 april 2021.pdf" target="_blank">Paasboodschap van Paus Franciscus</a> <span class="al-datum">4 april 2021</span></li>
           <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20201225_DeNieuwgeboreneVanNicolasAlquin/" target="_blank">De Nieuwgeborene van Nicolas Alquin</a> <span class="al-datum">25 december 2020</span></li>
           <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200622_VanLockdownNaarWakeUp/" target="_blank">Van lockdown naar wake-up</a> <span class="al-datum">22 juni 2020</span></li>
-          <li><a href="http://www.goedebijstand.be/Vieringen/Bezinningsteksten/20200413_PaasboodschapVanPausFranciscus/" target="_blank">Paasboodschap van paus Franciscus</a> <span class="al-datum">13 april 2020</span></li>
           <li><a href="Bezinningsteksten_pre2020/allerheiligen2019.png" target="_blank">Allerheiligen</a> <span class="al-datum">1 november 2019</span></li>
           <li><a href="Bezinningsteksten_pre2020/zonnelied.png" target="_blank">Het zonnelied van Franciscus</a></li>
         </ul>
       </div>
-
       <div id="vsub-fotos" class="vsub" style="display:none;">
         <ul class="archief-lijst">
           <li><a href="Vieringen en liturgie/Allerzielen_2024/2.png" target="_blank">Viering Allerzielen</a> <span class="al-datum">2 november 2024</span></li>
@@ -905,7 +775,7 @@ const pages = {
       </div>
     </section>` },
 
-  activiteiten: { title: 'Activiteiten', content: () => `
+  activiteiten: { title:'Activiteiten', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Activiteiten</div>
       <h2>Activiteiten &amp; Evenementen</h2>
@@ -922,17 +792,14 @@ const pages = {
         <p><em>Elke vrijdagavond van mei t.e.m. augustus, 18&ndash;22&nbsp;uur</em></p>
         <p>De kerk staat open voor iedereen. Contact: <a href="mailto:eheesen@hotmail.com">Nieneke</a> of <a href="mailto:danny.decock59@yahoo.com">Danny</a>.</p>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        
         <h3>Vlaamse Meesters in Situ</h3>
         <a href="https://www.flemishmastersinsitu.com/nl/locaties/onze-lieve-vrouw-van-goede-bijstandkerk-brussel" target="_blank">
-          <img src="https://www.flemishmastersinsitu.com/sites/vlaamsemeestersinsitu/files/public/media/images/2023-06/Aangepast%20Extra%20%28kunstwerk%20detail%29_Altaar%20Goede%20Bijstandskerk_0.jpg"
-               alt="Hoofdaltaar — Jan Pieter van Baurscheit de Oude"
+          <img src="${ALT}" alt="Hoofdaltaar — Jan Pieter van Baurscheit de Oude"
                style="width:100%;max-height:260px;object-fit:cover;border-radius:4px;border:3px solid var(--pale-blue);box-shadow:0 4px 18px rgba(15,40,80,0.18);margin:0.8rem 0;display:block;">
         </a>
         <p style="font-size:0.82rem;color:var(--muted);font-style:italic;margin-top:-0.5rem;margin-bottom:0.75rem;">Hoofdaltaar &mdash; Jan Pieter van Baurscheit de Oude &copy; Dominique Provost / Art in Flanders</p>
         <p>Voor wervelende barok in marmer en bladgoud moet u in onze kerk zijn. Jan Pieter van Baurscheit de Oude maakte van het hoofdaltaar een echte blikvanger. <a href="https://www.flemishmastersinsitu.com/nl/locaties/onze-lieve-vrouw-van-goede-bijstandkerk-brussel" target="_blank">Ontdek de Vlaamse Meesters in Situ &#8594;</a></p>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
-        
         <h3>Grondbibliotheek</h3>
         <p>Van elke plek op aarde een stukje grond.</p>
         <div class="ornament">&#x2748; &#x2748; &#x2748;</div>
@@ -940,14 +807,14 @@ const pages = {
         <p><a href="Vieringen en liturgie/Kerst/20251222_Kerstbrief.pdf" target="_blank">Lees de Kerstbrief (PDF) &#8594;</a></p>
       </div>
       <div id="asub-fotos" style="display:none;">
-        ${fotoBlok('Vieringen &amp; Liturgie', 'Momenten van gebed, eredienst en sacramenten doorheen het kerkelijk jaar.', '&#127775;')}
-        ${fotoBlok('Sociale Activiteiten', 'Ontmoetingen, maaltijden en samenzijn die de gemeenschap verbinden.', '&#129309;')}
-        ${fotoBlok('Kinderen &amp; Jongeren', 'Catechese, spelactiviteiten en jeugdvieringen voor de jongste parochianen.', '&#11088;')}
-        ${fotoBlok('Culturele Evenementen', 'Concerten, tentoonstellingen en culturele initiatieven in en rond de kerk.', '&#127925;')}
+        ${fotoBlok('Vieringen &amp; Liturgie','Momenten van gebed, eredienst en sacramenten doorheen het kerkelijk jaar.','&#127775;')}
+        ${fotoBlok('Sociale Activiteiten','Ontmoetingen, maaltijden en samenzijn die de gemeenschap verbinden.','&#129309;')}
+        ${fotoBlok('Kinderen &amp; Jongeren','Catechese, spelactiviteiten en jeugdvieringen voor de jongste parochianen.','&#11088;')}
+        ${fotoBlok('Culturele Evenementen','Concerten, tentoonstellingen en culturele initiatieven in en rond de kerk.','&#127925;')}
       </div>
     </section>` },
 
-  kinderen: { title: 'Kinderen & Jongeren', content: () => `
+  kinderen: { title:'Kinderen & Jongeren', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Kinderen &amp; Jongeren</div>
       <h2>Kinderen &amp; Jongeren</h2>
@@ -962,7 +829,7 @@ const pages = {
       <p>Via onze samenwerking met <strong>Kamino</strong> zijn er regelmatig activiteiten. <a onclick="navigate('samenwerking')">Meer over Kamino &#8594;</a></p>
     </section>` },
 
-  bijtjes: { title: 'Goede Bijtjes', content: () => `
+  bijtjes: { title:'Goede Bijtjes', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Goede Bijtjes</div>
       <h2>&#x1F41D; Goede Bijtjes</h2>
@@ -972,7 +839,7 @@ const pages = {
       <p><a onclick="navigate('contact')">Neem contact op voor meer info &#8594;</a></p>
     </section>` },
 
-  mosterdzaadjes: { title: 'Mosterdzaadjes', content: () => `
+  mosterdzaadjes: { title:'Mosterdzaadjes', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Mosterdzaadjes</div>
       <h2>&#x1F331; Mosterdzaadjes</h2>
@@ -982,7 +849,7 @@ const pages = {
       <p><a onclick="navigate('contact')">Neem contact op voor meer info &#8594;</a></p>
     </section>` },
 
-  vormsel: { title: 'Vormsel & Eerste Communie', content: () => `
+  vormsel: { title:'Vormsel & Eerste Communie', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('kinderen')">Kinderen &amp; Jongeren</a> <span>&#8250;</span> Vormsel &amp; Eerste Communie</div>
       <h2>&#x271D; Vormsel &amp; Eerste Communie</h2>
@@ -990,7 +857,19 @@ const pages = {
       <p>Contact: <a href="mailto:mariette.dhondt@gmail.com">mariette.dhondt@gmail.com</a></p>
     </section>` },
 
-  samenwerking: { title: 'Samenwerking', content: () => `
+  schelp: { title:'De Schelp', content:() => `
+    <section>
+      <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> De Schelp</div>
+      <h2>De Schelp</h2>
+      <p>De parochiezaal De Schelp is een rolstoeltoegankelijke ontmoetings- en vergaderruimte. Vanuit een christelijke levenshouding komt de gemeenschap van O.-L.-V. van Goede Bijstand op voor de gelijkheid van kansen op diverse terreinen. In De Schelp wil zij ruimte bieden aan organisaties die dit doel nastreven.</p>
+      <h3>Aanvragen</h3>
+      <p>Het is momenteel niet mogelijk om De Schelp te huren. Deze pagina zal bijgewerkt worden zodra dit weer mogelijk is.</p>
+      <h3>Contact</h3>
+      <p>Adres: Oliventenhof 8, Brussel Centrum</p>
+      <p><a onclick="navigate('contact')">Stuur een bericht &#8594;</a></p>
+    </section>` },
+
+  samenwerking: { title:'Samenwerking', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Samenwerking</div>
       <h2>Samenwerking</h2>
@@ -1004,7 +883,7 @@ const pages = {
       </div>
     </section>` },
 
-  overlijden: { title: 'Overlijden', content: () => `
+  overlijden: { title:'Overlijden', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Overlijden</div>
       <h2>Overlijden</h2>
@@ -1019,7 +898,7 @@ const pages = {
       <p>Contact: <a href="mailto:johnny.demot@viaporta.be">johnny.demot@viaporta.be</a> &nbsp;|&nbsp; <a onclick="navigate('contact')">Contactformulier &#8594;</a></p>
     </section>` },
 
-  contact: { title: 'Contact', content: () => `
+  contact: { title:'Contact', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> Contact</div>
       <h2>Contact</h2>
@@ -1039,7 +918,7 @@ const pages = {
       <div class="map-box">&#128205; Kerk van Goede Bijstand &mdash; Kolenmarkt 91, 1000 Brussel<br><br><a href="https://maps.google.com/?q=Kolenmarkt+91,+1000+Brussel" target="_blank">Bekijk op Google Maps &#8594;</a></div>
     </section>` },
 
-  homilie: { title: 'Homilie — Kerstmis 2025', content: () => `
+  homilie: { title:'Homilie — Kerstmis 2025', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('vieringen')">Vieringen</a> <span>&#8250;</span> Homilies</div>
       <h2>Kerstmis: moet ik zwijgen?</h2>
@@ -1052,7 +931,7 @@ const pages = {
       <p style="margin-top:1.5rem;"><a onclick="navigate('vieringen')">&#8592; Terug naar vieringen</a></p>
     </section>` },
 
-  bezinning: { title: 'Koud Gepakt, Warm Gedragen', content: () => `
+  bezinning: { title:'Koud Gepakt, Warm Gedragen', content:() => `
     <section>
       <div class="breadcrumb"><a onclick="navigate('home')">Home</a> <span>&#8250;</span> <a onclick="navigate('vieringen')">Vieringen</a> <span>&#8250;</span> Bezinningsteksten</div>
       <h2>Koud Gepakt, Warm Gedragen</h2>
