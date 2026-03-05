@@ -322,19 +322,18 @@ const VASTE_DATUMS = [
   { datum:"2026-04-05", tijd:"11:00", type:"viering", tekst:"Pasen — Goede Bijstand" },
 ];
 
-// ── Taizé: derde zaterdag van de maand genereren (voor de komende 12 maanden) ──
+// ── Taizé: derde zaterdag van de maand (voor de komende 5 weken) ──
 function genereerTaize() {
   const resultaat = [];
   const nu = new Date();
-  for (let m = 0; m < 12; m++) {
+  for (let m = 0; m < 3; m++) {
     const jr = nu.getFullYear() + Math.floor((nu.getMonth() + m) / 12);
     const mn = (nu.getMonth() + m) % 12;
-    // Zoek derde zaterdag
     let teller = 0;
     for (let dag = 1; dag <= 31; dag++) {
       const d = new Date(jr, mn, dag);
       if (d.getMonth() !== mn) break;
-      if (d.getDay() === 6) { // zaterdag
+      if (d.getDay() === 6) {
         teller++;
         if (teller === 3) {
           const key = `${jr}-${String(mn+1).padStart(2,'0')}-${String(dag).padStart(2,'0')}`;
@@ -346,7 +345,20 @@ function genereerTaize() {
   }
   return resultaat;
 }
-
+// ── Bijstand by Night: elke vrijdag van mei t.e.m. augustus ──
+function genereerBijstandByNight() {
+  const resultaat = [];
+  const nu = new Date(); nu.setHours(0,0,0);
+  const einde = new Date(nu); einde.setDate(nu.getDate() + 35);
+  for (let d = new Date(nu); d <= einde; d.setDate(d.getDate() + 1)) {
+    const mn = d.getMonth(); // 4=mei, 7=aug
+    if (d.getDay() === 5 && mn >= 4 && mn <= 7) {
+      const key = `${d.getFullYear()}-${String(mn+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+      resultaat.push({ datum: key, tijd: "18:00", type: "activiteit", tekst: "Bijstand by Night (18–22 u)" });
+    }
+  }
+  return resultaat;
+}
 // ── Gebruikersevents opslaan in localStorage ──
 const STORAGE_KEY = 'gb_agenda_extra';
 
@@ -361,7 +373,7 @@ function slaOpExtra(arr) {
 
 // ── Alle events samenvoegen per datum ──
 function getAlleEvents() {
-  const alle = [...VASTE_DATUMS, ...genereerTaize(), ...laadExtra()];
+  const alle = [...VASTE_DATUMS, ...genereerTaize(), ...genereerBijstandByNight(), ...laadExtra()];
   const kaart = {};
   alle.forEach(ev => {
     if (!kaart[ev.datum]) kaart[ev.datum] = [];
@@ -380,7 +392,7 @@ function agendaHTML() {
   const nu = new Date(); nu.setHours(0,0,0,0);
   let h = '<div class="agenda-wrapper">', hm = -1, rijen = 0;
 
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 35; i++) {
     const d = new Date(nu); d.setDate(nu.getDate() + i);
     const dw = d.getDay(), mn = d.getMonth(), jr = d.getFullYear(), nr = d.getDate();
     const s = `${jr}-${String(mn+1).padStart(2,'0')}-${String(nr).padStart(2,'0')}`;
