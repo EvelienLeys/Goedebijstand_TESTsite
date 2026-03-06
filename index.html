@@ -1409,7 +1409,7 @@ const pages = {
 // ═══════════════════════════════════════════════════════
 // NAVIGATIE
 // ═══════════════════════════════════════════════════════
-function navigate(pageKey) {
+function navigate(pageKey, pushState = true) {
   const page = pages[pageKey];
   if (!page) return;
   const content = typeof page.content === 'function' ? page.content() : page.content;
@@ -1417,9 +1417,14 @@ function navigate(pageKey) {
   document.getElementById('sidebar').innerHTML = getSidebar();
   document.title = page.title + ' \u2014 Onze-Lieve-Vrouw van Goede Bijstand';
   document.querySelectorAll('nav a').forEach(a => a.classList.toggle('active', a.dataset.page === pageKey));
-  window.location.hash = pageKey;
+  if (pushState) window.history.pushState({ page: pageKey }, '', '#' + pageKey);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+window.addEventListener('popstate', function(e) {
+  const pageKey = e.state?.page || window.location.hash.replace('#', '') || 'home';
+  navigate(pageKey, false);
+});
 
 const startPage = window.location.hash.replace('#', '') || 'home';
 navigate(pages[startPage] ? startPage : 'home');
