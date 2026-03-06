@@ -1417,10 +1417,12 @@ function navigate(pageKey) {
   document.getElementById('sidebar').innerHTML = getSidebar();
   document.title = page.title + ' \u2014 Onze-Lieve-Vrouw van Goede Bijstand';
   document.querySelectorAll('nav a').forEach(a => a.classList.toggle('active', a.dataset.page === pageKey));
+  window.location.hash = pageKey;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-navigate('home');
+const startPage = window.location.hash.replace('#', '') || 'home';
+navigate(pages[startPage] ? startPage : 'home');
 </script>
 </body>
 </html>
