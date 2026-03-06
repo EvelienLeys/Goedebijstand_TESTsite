@@ -538,9 +538,68 @@ document.getElementById('lightbox').addEventListener('click', function(e) { if (
 // ═══════════════════════════════════════════════════════
 // HELPERS
 // ═══════════════════════════════════════════════════════
-function fotoBlok(titel, omschr, icoon) {
-  const ph = `<div class="foto-item"><div class="foto-ph"><span class="fi">${icoon}</span>Foto toevoegen</div></div>`;
-  return `<div class="foto-categorie"><h3 class="foto-cat-titel">${titel}</h3><p class="foto-omschr">${omschr}</p><div class="foto-grid">${ph}${ph}${ph}</div></div>`;
+const GITHUB_API = 'https://api.github.com/repos/evelienleys/goedebijstand/git/trees/main?recursive=1';
+let fotoCache = null;
+
+async function laadFotos() {
+  if (fotoCache) return fotoCache;
+  try {
+    const res = await fetch(GITHUB_API);
+    const data = await res.json();
+    fotoCache = data.tree
+      .filter(f => /\.(png|jpg|jpeg|gif|webp)$/i.test(f.path))
+      .map(f => ({
+        pad: f.path,
+        url: `https://raw.githubusercontent.com/evelienleys/goedebijstand/main/${f.path}`,
+        map: f.path.split('/').slice(0, -1).join('/') || 'Overig'
+      }));
+    return fotoCache;
+  } catch(e) {
+    return [];
+  }
+}
+
+async function renderFotoGalerij() {
+  const container = document.getElementById('asub-fotos');
+  if (!container) return;
+  container.innerHTML = `<p style="color:var(--muted);font-style:italic;font-size:0.9rem;">Foto's worden geladen…</p>`;
+
+  const fotos = await laadFotos();
+  if (!fotos.length) {
+    container.innerHTML = `<p style="color:var(--muted);font-style:italic;">Geen foto's gevonden in de repository.</p>`;
+    return;
+  }
+
+  // Groepeer per map
+  const mappen = {};
+  fotos.forEach(f => {
+    if (!mappen[f.map]) mappen[f.map] = [];
+    mappen[f.map].push(f);
+  });
+
+  let h = '';
+  Object.entries(mappen).sort(([a],[b]) => a.localeCompare(b)).forEach(([map, items]) => {
+    const mapNaam = map.split('/').pop();
+    h += `<div class="foto-categorie">
+      <h3 class="foto-cat-titel">${mapNaam}</h3>
+      <div class="foto-grid">`;
+    items.forEach(f => {
+      const bestandsnaam = f.pad.split('/').pop().replace(/\.[^.]+$/, '').replace(/[_-]/g, ' ');
+      h += `<div class="foto-item" onclick="openLb('${f.url}','${bestandsnaam}')">
+        <img src="${f.url}" alt="${bestandsnaam}" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\\'foto-ph\\'><span class=\\'fi\\'>🖼</span>${bestandsnaam}</div>'">
+      </div>`;
+    });
+    h += `</div></div>`;
+  });
+
+  container.innerHTML = h;
+}
+
+function openLb(src, cap) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-cap').textContent = cap;
+  document.getElementById('lightbox').classList.add('open');
 }
 
 function getSidebar() {
@@ -594,6 +653,7 @@ function showVierSub(k) {
 function showActSub(k) {
   ['overzicht','fotos'].forEach(id => { const el=document.getElementById('asub-'+id); if(el) el.style.display=(id===k)?'block':'none'; });
   document.querySelectorAll('[data-asub]').forEach(a => a.classList.toggle('act-actief', a.dataset.asub===k));
+  if (k === 'fotos') renderFotoGalerij();
 }
 
 // ═══════════════════════════════════════════════════════
@@ -885,12 +945,7 @@ const pages = {
         <h3><a href="Vieringen en liturgie/Kerst/20251222_Kerstbrief.pdf" target="_blank" style="text-decoration:none;color:inherit;">Kerstbrief 2025 &mdash; De Kleine Zusters van Jezus &#8594;</a></h3>
         <p><a href="Vieringen en liturgie/Kerst/20251222_Kerstbrief.pdf" target="_blank">Lees de Kerstbrief (PDF) &#8594;</a></p>
       </div>
-      <div id="asub-fotos" style="display:none;">
-        ${fotoBlok('Vieringen &amp; Liturgie','Momenten van gebed, eredienst en sacramenten doorheen het kerkelijk jaar.','&#127775;')}
-        ${fotoBlok('Sociale Activiteiten','Ontmoetingen, maaltijden en samenzijn die de gemeenschap verbinden.','&#129309;')}
-        ${fotoBlok('Kinderen &amp; Jongeren','Catechese, spelactiviteiten en jeugdvieringen voor de jongste parochianen.','&#11088;')}
-        ${fotoBlok('Culturele Evenementen','Concerten, tentoonstellingen en culturele initiatieven in en rond de kerk.','&#127925;')}
-      </div>
+    <div id="asub-fotos" style="display:none;"></div>
     </section>` },
 
   kinderen: { title:'Kinderen & Jongeren', content:() => `
